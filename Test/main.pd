@@ -1015,7 +1015,7 @@ Left Input \; screenLine3 Press Aux when done \;;
 #X obj 177 58 delay 100;
 #X obj 73 82 s clear-oled;
 #X msg 213 166 \; screenLine1 Put Headphones on!!! \; screenLine2 Check
-Right Audio Input \; screenLine3 Press Aux when done \;;
+Right Input \; screenLine3 Press Aux when done \;;
 #X connect 0 0 19 0;
 #X connect 0 0 20 0;
 #X connect 1 0 2 1;
