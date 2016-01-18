@@ -1,4 +1,4 @@
-#N canvas 0 22 1440 799 10;
+#N canvas 4 50 1440 799 10;
 #N canvas 0 50 450 278 (subpatch) 0;
 #X array \$1-array 1280 float 2;
 #X coords 0 1 1280 -1 335 251 1 0 0;
@@ -74,7 +74,7 @@
 #X obj 203 798 hip~ 5;
 #X obj 430 527 * 2;
 #X obj 336 370 r knob3;
-#X obj 202 764 *~ 1;
+#X obj 202 764 *~ 0.5;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 15 0;
