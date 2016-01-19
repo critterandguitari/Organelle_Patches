@@ -9,7 +9,7 @@
 #X obj 42 289 loadbang;
 #X obj 401 472 sampler-voice metro1.wav 0;
 #X obj 178 150 master-metronome;
-#X obj 178 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 178 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 443 75 r quarters;
 #X floatatom 443 391 5 0 0 0 - - -, f 5;
@@ -109,6 +109,8 @@
 #X msg 42 329 \; screenLine1 1: Tempo \; screenLine2 2: Accent 4 \;
 screenLine3 3: Metro Tone \; screenLine4 4: Synth Tone \; screenLine5
 Aux: Start / Stop \;;
+#X obj 168 17 r midi-clock-start;
+#X msg 168 39 1;
 #X connect 0 0 6 0;
 #X connect 1 0 81 0;
 #X connect 2 0 44 0;
@@ -182,3 +184,5 @@ Aux: Start / Stop \;;
 #X connect 76 0 73 0;
 #X connect 77 0 63 0;
 #X connect 78 0 69 0;
+#X connect 83 0 84 0;
+#X connect 84 0 8 0;
