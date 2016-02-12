@@ -213,13 +213,13 @@ or foot switch are held down;
 #X obj 1016 259 grainvoice;
 #X obj 1090 230 grainvoice;
 #X obj 1164 260 grainvoice;
-#X msg 687 543 \; screenLine1 1: Grain Size screenLine2 2: Detune \;
-screenLine3 3: Rise and Fall Time \; screenLine4 4: Density \; screenLine5
-Aux/FS: Hold to REC \;, f 36;
 #X text 42 18 Sampler with Granular Playback;
 #X text 43 66 minimum recording time 0.5 seconds;
+#X msg 687 543 \; screenLine1 1: Grain Size \; screenLine2 2: Detune
+\; screenLine3 3: Rise and Fall Time \; screenLine4 4: Density \; screenLine5
+Aux/FS: Hold to REC \;, f 36;
 #X connect 0 0 38 0;
-#X connect 2 0 56 0;
+#X connect 2 0 58 0;
 #X connect 3 0 37 0;
 #X connect 5 0 11 0;
 #X connect 6 0 26 0;
