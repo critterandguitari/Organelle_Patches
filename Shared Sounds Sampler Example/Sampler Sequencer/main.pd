@@ -1,0 +1,204 @@
+#N canvas 134 88 1436 728 10;
+#X obj 29 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 429 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 226 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 621 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 819 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 1005 85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 428 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 225 135 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 621 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 817 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1007 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 430 185 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 225 188 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 621 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 817 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1010 185 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 29 135 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 29 185 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 431 235 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 226 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 622 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 820 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1010 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 29 234 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 29 41 Sampler Manager;
+#X text 292 10 -Each subpatch represents a key on the organelle. -Pass
+the sound file name as an argument to sampler-voice \, this replaces
+\$1 inside sampler-voice. -The sound files must be in the folder with
+this patch.;
+#X obj 37 518 sequencer2;
+#X obj 724 533 *~ 1;
+#X obj 884 364 r knob2;
+#X obj 589 619 throw~ outL;
+#X obj 487 619 throw~ outR;
+#X floatatom 833 458 5 0 0 0 - - -, f 5;
+#X obj 683 488 rev3~ 100 90 3000 20;
+#X obj 906 423 + 80;
+#X obj 455 378 r knob3;
+#X obj 456 409 sig~;
+#X obj 456 431 lop~ 5;
+#X obj 554 460 -~ 1;
+#X obj 504 579 *~;
+#X obj 615 545 *~;
+#X obj 554 482 abs~;
+#X obj 356 430 * 100;
+#X obj 356 452 i;
+#X obj 356 522 s screenLine3;
+#X msg 356 500 3: Wet / Dry \$1 %;
+#X obj 884 503 * 100;
+#X obj 884 525 i;
+#X obj 884 595 s screenLine2;
+#X msg 884 573 2: Reverb Amount \$1 %;
+#X obj 696 369 catch~ samp_voice_out;
+#X obj 710 404 *~ 1;
+#X obj 1057 485 i;
+#X obj 1057 406 r knob1;
+#X obj 1057 555 s screenLine1;
+#X obj 1057 437 * 150;
+#X obj 1057 462 + 50;
+#X msg 1057 533 1: Play Speed \$1 %;
+#X obj 36 345 loadbang;
+#X msg 36 385 \; screenLine1 1: Play Speed % \; screenLine2 2: Reverb
+Amount % \; screenLine3 3: Wet / Dry % \; screenLine4 4: x \; screenLine5
+Aux: Sequencer \;;
+#X obj 906 401 * 15;
+#X text 689 329 get the output from voices and feed it into rev3~ \,
+a fun reverb included with Pd;
+#X obj 1228 465 i;
+#X obj 1228 386 r knob4;
+#X obj 1228 436 * 100;
+#X obj 1228 409 moses 0.98;
+#X obj 1295 436 change;
+#X msg 1295 458 bang;
+#X obj 1228 543 s screenLine4;
+#X obj 1295 501 s screenLine4;
+#X msg 1295 479 4: Decay Off;
+#X msg 1228 521 4: Decay \$1 %;
+#X obj 884 548 change -1;
+#X obj 1057 507 change -1;
+#X obj 1228 487 change -1;
+#X obj 356 474 change -1;
+#X obj 226 110 sampler-voice 2.wav 1;
+#X obj 429 110 sampler-voice 3.wav 2;
+#X obj 621 109 sampler-voice 4.wav 3;
+#X obj 819 109 sampler-voice 5.wav 4;
+#X obj 1005 108 sampler-voice 6.wav 5;
+#X obj 29 158 sampler-voice 7.wav 6;
+#X obj 225 157 sampler-voice 8.wav 7;
+#X obj 428 159 sampler-voice 9.wav 8;
+#X obj 621 160 sampler-voice 10.wav 9;
+#X obj 817 158 sampler-voice 11.wav 10;
+#X obj 1007 157 sampler-voice 12.wav 11;
+#X obj 29 208 sampler-voice 13.wav 12;
+#X obj 225 209 sampler-voice 14.wav 13;
+#X obj 430 208 sampler-voice 15.wav 14;
+#X obj 621 209 sampler-voice 16.wav 15;
+#X obj 817 210 sampler-voice 17.wav 16;
+#X obj 1010 211 sampler-voice 18.wav 17;
+#X obj 29 260 sampler-voice 19.wav 18;
+#X obj 226 259 sampler-voice 20.wav 19;
+#X obj 431 262 sampler-voice 21.wav 20;
+#X obj 622 260 sampler-voice 22.wav 21;
+#X obj 820 260 sampler-voice 23.wav 22;
+#X obj 1010 262 sampler-voice 24.wav 23;
+#X obj 28 109 sampler-voice 1.wav 0;
+#X connect 0 0 98 0;
+#X connect 1 0 76 0;
+#X connect 2 0 75 0;
+#X connect 3 0 77 0;
+#X connect 4 0 78 0;
+#X connect 5 0 79 0;
+#X connect 6 0 82 0;
+#X connect 7 0 81 0;
+#X connect 8 0 83 0;
+#X connect 9 0 84 0;
+#X connect 10 0 85 0;
+#X connect 11 0 88 0;
+#X connect 12 0 87 0;
+#X connect 13 0 89 0;
+#X connect 14 0 90 0;
+#X connect 15 0 91 0;
+#X connect 16 0 80 0;
+#X connect 17 0 86 0;
+#X connect 18 0 94 0;
+#X connect 19 0 93 0;
+#X connect 20 0 95 0;
+#X connect 21 0 96 0;
+#X connect 22 0 97 0;
+#X connect 23 0 92 0;
+#X connect 27 0 38 1;
+#X connect 28 0 45 0;
+#X connect 28 0 59 0;
+#X connect 31 0 32 2;
+#X connect 32 0 27 0;
+#X connect 32 1 27 0;
+#X connect 32 2 27 0;
+#X connect 32 3 27 0;
+#X connect 33 0 31 0;
+#X connect 34 0 35 0;
+#X connect 34 0 41 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 36 0 38 0;
+#X connect 37 0 40 0;
+#X connect 38 0 29 0;
+#X connect 38 0 30 0;
+#X connect 39 0 29 0;
+#X connect 39 0 30 0;
+#X connect 40 0 39 0;
+#X connect 41 0 42 0;
+#X connect 42 0 74 0;
+#X connect 44 0 43 0;
+#X connect 45 0 46 0;
+#X connect 46 0 71 0;
+#X connect 48 0 47 0;
+#X connect 49 0 50 0;
+#X connect 50 0 32 0;
+#X connect 50 0 32 1;
+#X connect 50 0 39 1;
+#X connect 51 0 72 0;
+#X connect 52 0 54 0;
+#X connect 54 0 55 0;
+#X connect 55 0 51 0;
+#X connect 56 0 53 0;
+#X connect 57 0 58 0;
+#X connect 59 0 33 0;
+#X connect 61 0 73 0;
+#X connect 62 0 64 0;
+#X connect 63 0 61 0;
+#X connect 64 0 63 0;
+#X connect 64 1 65 0;
+#X connect 65 0 66 0;
+#X connect 66 0 69 0;
+#X connect 69 0 68 0;
+#X connect 70 0 67 0;
+#X connect 71 0 48 0;
+#X connect 72 0 56 0;
+#X connect 73 0 70 0;
+#X connect 74 0 44 0;
