@@ -1,0 +1,71 @@
+#N canvas 880 206 747 630 10;
+#X obj 390 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 132 500 f;
+#X obj 466 31 loadbang;
+#X msg 466 53 0;
+#X obj 251 58 inlet;
+#X obj 390 45 inlet;
+#X obj 132 534 outlet;
+#X obj 383 529 outlet;
+#X text 481 117 routes a knob to page 1 or 2;
+#X obj 132 453 spigot;
+#X obj 211 373 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 247 461 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 132 353 override 0.2;
+#X obj 226 183 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 171 412 1;
+#X obj 237 231 sel 1 0;
+#X msg 268 413 0;
+#X obj 442 170 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 367 124 ==;
+#X obj 187 263 t b b b;
+#X obj 384 496 f;
+#X obj 384 449 spigot;
+#X obj 463 369 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 499 457 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 384 349 override 0.2;
+#X msg 423 408 1;
+#X obj 489 227 sel 1 0;
+#X msg 520 409 0;
+#X obj 439 259 t b b b;
+#X connect 0 0 17 0;
+#X connect 0 0 18 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 12 0;
+#X connect 4 0 24 0;
+#X connect 5 0 0 0;
+#X connect 9 0 1 0;
+#X connect 11 0 1 0;
+#X connect 12 0 9 0;
+#X connect 12 1 10 0;
+#X connect 13 0 15 0;
+#X connect 14 0 9 1;
+#X connect 15 0 19 0;
+#X connect 15 1 16 0;
+#X connect 16 0 9 1;
+#X connect 17 0 26 0;
+#X connect 18 0 13 0;
+#X connect 19 0 14 0;
+#X connect 19 1 12 1;
+#X connect 19 2 11 0;
+#X connect 20 0 7 0;
+#X connect 21 0 20 0;
+#X connect 23 0 20 0;
+#X connect 24 0 21 0;
+#X connect 24 1 22 0;
+#X connect 25 0 21 1;
+#X connect 26 0 28 0;
+#X connect 26 1 27 0;
+#X connect 27 0 21 1;
+#X connect 28 0 25 0;
+#X connect 28 1 24 1;
+#X connect 28 2 23 0;
