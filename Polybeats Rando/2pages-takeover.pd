@@ -1,0 +1,43 @@
+#N canvas 1099 90 747 633 10;
+#X obj 233 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 370 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 378 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 389 162 ==;
+#X obj 129 361 f;
+#X obj 204 200 t f f;
+#X obj 212 272 sel 0;
+#X obj 372 223 t f f;
+#X obj 382 301 sel 0;
+#X obj 334 359 f;
+#X obj 466 31 loadbang;
+#X msg 466 53 0;
+#X obj 251 58 inlet;
+#X obj 390 45 inlet;
+#X obj 128 410 outlet;
+#X obj 330 403 outlet;
+#X text 481 117 routes a knob to page 1 or 2;
+#X obj 146 241 override-takeover;
+#X obj 312 260 override-takeover;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 14 0;
+#X connect 5 0 17 1;
+#X connect 5 1 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 18 1;
+#X connect 7 1 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 0;
+#X connect 10 0 11 0;
+#X connect 11 0 2 0;
+#X connect 12 0 17 0;
+#X connect 12 0 18 0;
+#X connect 13 0 2 0;
+#X connect 17 0 4 0;
+#X connect 18 0 9 0;
