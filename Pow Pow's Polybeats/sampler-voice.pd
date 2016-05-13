@@ -1,4 +1,4 @@
-#N canvas 298 50 1550 918 10;
+#N canvas 34 108 1507 1033 10;
 #N canvas 0 50 450 278 (subpatch) 0;
 #X array \$1-array 168000 float 2;
 #X coords 0 1 168000 -1 335 251 1 0 0;
@@ -94,6 +94,10 @@
 #X obj 403 485 / 2;
 #X obj 266 676 / 1;
 #X obj 420 353 r knob3-detent;
+#X obj 122 437 f \$2;
+#X obj 89 493 makenote 100 200;
+#X obj 110 462 + 60;
+#X obj 73 548 noteout 1;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 13 0;
@@ -159,6 +163,7 @@
 #X connect 66 0 67 1;
 #X connect 67 0 62 2;
 #X connect 68 0 39 0;
+#X connect 68 0 88 0;
 #X connect 69 0 70 0;
 #X connect 70 0 60 0;
 #X connect 71 0 72 0;
@@ -174,3 +179,7 @@
 #X connect 85 0 32 0;
 #X connect 86 0 8 1;
 #X connect 87 0 84 0;
+#X connect 88 0 90 0;
+#X connect 89 0 91 0;
+#X connect 89 1 91 1;
+#X connect 90 0 89 0;

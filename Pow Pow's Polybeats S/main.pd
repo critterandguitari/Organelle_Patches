@@ -1,4 +1,4 @@
-#N canvas 403 153 1513 725 10;
+#N canvas 952 148 1513 725 10;
 #X text 94 70 Sampler Manager;
 #X obj 411 434 throw~ outL;
 #X obj 309 434 throw~ outR;
@@ -113,6 +113,13 @@ of beat. leads to interesting polyrythms.;
 #X obj 1074 298 - 1200;
 #X obj 1074 360 s screenLine3;
 #X msg 1074 336 3: Tune \$1 cents;
+#X obj 914 518 s midiOutGate;
+#X obj 914 438 loadbang;
+#X obj 914 464 delay 20;
+#X msg 914 490 0;
+#X text 858 414 because this patch sends its own notes out;
+#X text 858 396 disable keyboard sending MIDI notes from mother.pd
+;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X connect 4 0 2 0;
@@ -185,3 +192,6 @@ of beat. leads to interesting polyrythms.;
 #X connect 102 0 100 0;
 #X connect 103 0 105 0;
 #X connect 105 0 104 0;
+#X connect 107 0 108 0;
+#X connect 108 0 109 0;
+#X connect 109 0 106 0;

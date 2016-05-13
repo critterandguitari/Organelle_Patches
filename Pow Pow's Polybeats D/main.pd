@@ -14,7 +14,7 @@
 #X obj 687 84 r aux;
 #X obj 687 110 sel 1;
 #X obj 687 144 s cancel;
-#X obj 746 288 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 746 288 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 650 176 0;
 #X obj 720 179 r start-metro;
@@ -179,12 +179,12 @@ of beat. leads to interesting polyrythms.;
 #X obj 508 371 r dtime;
 #X obj 605 367 r fb;
 #X obj 418 272 sampler-voice 24.wav 23;
-#X obj 1334 159 s knobpage;
+#X obj 1325 175 s knobpage;
 #X obj 1325 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 1321 52 r fs;
-#X obj 1321 74 sel 1;
-#X obj 1321 96 bang;
+0 1;
+#X obj 1325 52 r fs;
+#X obj 1325 74 sel 1;
+#X obj 1325 96 bang;
 #X obj 669 453 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X floatatom 659 599 5 0 0 0 - - -, f 5;
