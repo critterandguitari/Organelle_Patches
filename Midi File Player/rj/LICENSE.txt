@@ -1,12 +1,13 @@
-Except as otherwise noted, all files in this directory are
-copyright Critter & Guitari Inc. and can be distributed freely according to the
+Except as otherwise noted, all files in the "rj" library of abstractions are
+copyright Reality Jockey Ltd. and can be distributed freely according to the
 terms of the GNU GENERAL PUBLIC LICENSE v3 found below.
 
 Where files have been imported from outside sources, comments inside the file
 describe the authors and the license to apply to these abstractions. 
 
-As an example, the rj abstractions in the rj directory include code written by
-Reality Jockey Ltd. and others and are copyrighted according to the LICENSE.txt file in the rj directory.
+As an example, the ADSR abstractions and the e_vocoder include code written by
+Miller Puckette and others and are copyrighted according to the
+"Standard Improved BSD License" license found in this file as well.
 
 
 <Start of GPLv3>
