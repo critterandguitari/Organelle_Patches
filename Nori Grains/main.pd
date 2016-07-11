@@ -1,0 +1,267 @@
+#N canvas 336 93 1360 777 10;
+#X obj 46 124 r notes;
+#X obj 230 540 throw~ outR;
+#X obj 687 520 loadbang;
+#X obj 46 176 pack 0 0 0;
+#X text 43 41 sample is transposed by keys;
+#X obj 1000 401 i;
+#X obj 1000 327 r knob3;
+#X obj 1174 351 * 100;
+#X obj 1174 397 i;
+#X obj 1174 327 r knob4;
+#X obj 1174 423 change -1;
+#X obj 1000 426 change -1;
+#X obj 1174 470 s screenLine4;
+#X obj 1000 478 s screenLine3;
+#X obj 689 400 i;
+#X obj 689 422 change -1;
+#X obj 689 327 r knob1;
+#X obj 689 470 s screenLine1;
+#X obj 852 327 r knob2;
+#N canvas 447 98 1298 901 record-load-sample 1;
+#X msg 247 627 bang;
+#X obj 476 147 r aux;
+#X obj 306 627 r~ inL;
+#X obj 365 626 r~ inR;
+#X obj 247 813 tabwrite~ newsample;
+#X obj 545 147 r fs;
+#X obj 506 631 s led;
+#X msg 543 601 0;
+#X obj 466 470 sel 1 0;
+#X obj 604 741 timer;
+#X obj 604 815 s dur;
+#X obj 604 767 * 44.1;
+#X obj 355 689 *~;
+#X obj 426 649 line~;
+#X msg 411 600 1 1;
+#X msg 445 600 0 2;
+#X msg 506 600 1;
+#X text 868 706 time length of recording in samples;
+#X obj 18 594 delay 2;
+#X msg 50 648 stop;
+#X obj 18 783 soundfiler;
+#X obj 18 620 t b b;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array newsample 264600 float 0;
+#X coords 0 1.02 264599 -1.02 200 130 1 0 0;
+#X restore 49 104 graph;
+#X msg 18 758 write -nframes \$1 ./sound.wav newsample;
+#X obj 18 735 i;
+#X obj 36 706 r dur;
+#X msg 667 571 stop;
+#X obj 393 508 t b b b b b;
+#X msg 758 573 0;
+#X obj 514 508 t b b b b b;
+#X obj 465 418 i;
+#X obj 465 443 change;
+#X text 728 595 autostopper;
+#X obj 604 792 expr if($f1 < 4410 \, 4410 \, $f1);
+#X obj 889 597 loadbang;
+#X obj 889 655 soundfiler;
+#X msg 889 625 read ./sound.wav newsample;
+#X text 875 731 it must be at least 4410 cause this;
+#X text 884 761 is what the player assumes;
+#X obj 667 609 delay 6000;
+#X text 175 24 max 6 seconds;
+#X text 12 10 records minimum 0.5 seconds or as long as aux button
+or foot switch are held down;
+#X obj 467 273 timer;
+#X obj 476 179 sel 1 0;
+#X obj 466 324 t b f;
+#X obj 466 351 delay;
+#X msg 466 375 0;
+#X obj 435 218 t b b;
+#X msg 435 243 1;
+#X obj 466 297 expr if($f1 < 600 \, 600 - $f1 \, 0);
+#X text 520 439 makes sure we dont stop twice;
+#X text 540 269 ensures minimum recording is 500 ms + 256 samples;
+#X connect 0 0 4 0;
+#X connect 1 0 43 0;
+#X connect 2 0 12 0;
+#X connect 3 0 12 0;
+#X connect 5 0 43 0;
+#X connect 7 0 6 0;
+#X connect 8 0 27 0;
+#X connect 8 1 29 0;
+#X connect 9 0 11 0;
+#X connect 11 0 33 0;
+#X connect 12 0 4 0;
+#X connect 13 0 12 1;
+#X connect 14 0 13 0;
+#X connect 15 0 13 0;
+#X connect 16 0 6 0;
+#X connect 18 0 21 0;
+#X connect 19 0 4 0;
+#X connect 21 0 24 0;
+#X connect 21 1 19 0;
+#X connect 23 0 20 0;
+#X connect 24 0 23 0;
+#X connect 25 0 24 1;
+#X connect 26 0 39 0;
+#X connect 27 0 0 0;
+#X connect 27 1 14 0;
+#X connect 27 2 16 0;
+#X connect 27 3 9 0;
+#X connect 27 4 39 0;
+#X connect 28 0 30 0;
+#X connect 29 0 18 0;
+#X connect 29 1 15 0;
+#X connect 29 2 7 0;
+#X connect 29 3 9 1;
+#X connect 29 4 26 0;
+#X connect 30 0 31 0;
+#X connect 31 0 8 0;
+#X connect 33 0 10 0;
+#X connect 34 0 36 0;
+#X connect 35 0 33 0;
+#X connect 36 0 35 0;
+#X connect 39 0 28 0;
+#X connect 42 0 49 0;
+#X connect 43 0 47 0;
+#X connect 43 1 42 1;
+#X connect 44 0 45 0;
+#X connect 44 1 45 1;
+#X connect 45 0 46 0;
+#X connect 46 0 30 0;
+#X connect 47 0 48 0;
+#X connect 47 1 42 0;
+#X connect 48 0 30 0;
+#X connect 49 0 44 0;
+#X restore 1085 26 pd record-load-sample;
+#X obj 852 377 i;
+#X obj 852 402 change -1;
+#X obj 852 450 s screenLine2;
+#X obj 73 539 throw~ outL;
+#X obj 231 488 catch~ grainoutR;
+#X obj 74 486 catch~ grainoutL;
+#X obj 1000 356 * 60;
+#X msg 1174 446 4: Density \$1 %;
+#X msg 852 426 2: Detune \$1 Hz;
+#X obj 852 352 * 10;
+#X msg 689 446 1: Grain Size \$1 ms;
+#X obj 689 352 * 500;
+#X obj 689 377 + 1;
+#X msg 1000 452 3: Rise/Fall: \$1 sec;
+#X obj 1000 380 + 1;
+#X obj 1174 374 + 1;
+#N canvas 6 125 217 182 hanning 0;
+#X text 50 85 0;
+#X text 50 62 1;
+#X text 53 101 0;
+#X text 89 101 256;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array hanning 256 float 1;
+#A 0 0 0.000150591 0.000602275 0.00135478 0.00240764 0.00376022 0.00541174
+0.00736117 0.00960734 0.0121489 0.0149843 0.0181119 0.0215298 0.0252359
+0.0292279 0.0335035 0.0380601 0.042895 0.0480052 0.0533877 0.0590392
+0.0649563 0.0711355 0.077573 0.084265 0.0912073 0.0983959 0.105826
+0.113494 0.121395 0.129524 0.137876 0.146446 0.155229 0.16422 0.173413
+0.182803 0.192384 0.20215 0.212095 0.222214 0.2325 0.242948 0.25355
+0.264301 0.275194 0.286222 0.297379 0.308658 0.320052 0.331555 0.343159
+0.354857 0.366643 0.378509 0.390449 0.402454 0.414519 0.426634 0.438794
+0.450991 0.463218 0.475466 0.487729 0.5 0.512271 0.524534 0.536782
+0.549009 0.561205 0.573365 0.585481 0.597545 0.609551 0.62149 0.633357
+0.645143 0.656841 0.668445 0.679948 0.691342 0.702621 0.713778 0.724806
+0.735699 0.74645 0.757052 0.767499 0.777786 0.787905 0.79785 0.807616
+0.817197 0.826587 0.83578 0.844771 0.853554 0.862124 0.870476 0.878605
+0.886506 0.894174 0.901605 0.908793 0.915736 0.922428 0.928865 0.935044
+0.940961 0.946613 0.951995 0.957106 0.96194 0.966497 0.970773 0.974765
+0.978471 0.981889 0.985016 0.987852 0.990393 0.992639 0.994589 0.99624
+0.997593 0.998645 0.999398 0.999849 1 0.999849 0.999398 0.998645 0.997592
+0.996239 0.994588 0.992638 0.990392 0.987851 0.985015 0.981887 0.978469
+0.974763 0.970771 0.966495 0.961939 0.957104 0.951993 0.946611 0.940959
+0.935042 0.928863 0.922425 0.915733 0.908791 0.901602 0.894171 0.886503
+0.878602 0.870473 0.862121 0.853551 0.844768 0.835777 0.826584 0.817194
+0.807613 0.797847 0.787901 0.777782 0.767496 0.757048 0.746446 0.735695
+0.724802 0.713774 0.702617 0.691338 0.679944 0.668441 0.656837 0.645139
+0.633353 0.621486 0.609547 0.597541 0.585477 0.573361 0.561201 0.549004
+0.536778 0.52453 0.512266 0.499996 0.487725 0.475462 0.463213 0.450987
+0.43879 0.42663 0.414515 0.40245 0.390445 0.378505 0.366639 0.354853
+0.343155 0.331551 0.320048 0.308654 0.297375 0.286218 0.27519 0.264297
+0.253547 0.242944 0.232497 0.222211 0.212092 0.202146 0.19238 0.182799
+0.17341 0.164217 0.155226 0.146443 0.137873 0.129521 0.121392 0.113491
+0.105823 0.0983929 0.0912044 0.0842621 0.0775702 0.0711328 0.0649537
+0.0590367 0.0533853 0.0480029 0.0428928 0.038058 0.0335015 0.029226
+0.025234 0.0215281 0.0181104 0.0149829 0.0121476 0.00960615 0.0073601
+0.00541082 0.00375944 0.00240701 0.00135431 0.000601947 0.000150442
+;
+#X coords 0 1 256 0 40 30 1;
+#X restore 65 68 graph;
+#X text 50 85 0;
+#X text 50 62 1;
+#X text 53 101 0;
+#X text 89 101 256;
+#X text 19 19 dont mess with this;
+#X restore 1267 26 pd hanning;
+#X obj 46 200 route 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16, f 171
+;
+#X obj 46 150 poly 16 1, f 11;
+#X text 1166 179 USS Norfolk;
+#X obj 46 229 grainvoice;
+#X obj 120 259 grainvoice;
+#X obj 195 231 grainvoice;
+#X obj 269 261 grainvoice;
+#X obj 344 230 grainvoice;
+#X obj 418 262 grainvoice;
+#X obj 493 229 grainvoice;
+#X obj 568 260 grainvoice;
+#X obj 643 231 grainvoice;
+#X obj 717 259 grainvoice;
+#X obj 792 230 grainvoice;
+#X obj 866 260 grainvoice;
+#X obj 941 231 grainvoice;
+#X obj 1016 259 grainvoice;
+#X obj 1090 230 grainvoice;
+#X obj 1164 260 grainvoice;
+#X text 42 18 Sampler with Granular Playback;
+#X text 43 66 minimum recording time 0.5 seconds;
+#X msg 687 543 \; screenLine1 1: Grain Size \; screenLine2 2: Detune
+\; screenLine3 3: Rise and Fall Time \; screenLine4 4: Density \; screenLine5
+Aux/FS: Hold to REC \;, f 36;
+#X connect 0 0 38 0;
+#X connect 2 0 58 0;
+#X connect 3 0 37 0;
+#X connect 5 0 11 0;
+#X connect 6 0 26 0;
+#X connect 7 0 35 0;
+#X connect 8 0 10 0;
+#X connect 9 0 7 0;
+#X connect 10 0 27 0;
+#X connect 11 0 33 0;
+#X connect 14 0 15 0;
+#X connect 15 0 30 0;
+#X connect 16 0 31 0;
+#X connect 18 0 29 0;
+#X connect 20 0 21 0;
+#X connect 21 0 28 0;
+#X connect 24 0 1 0;
+#X connect 25 0 23 0;
+#X connect 26 0 34 0;
+#X connect 27 0 12 0;
+#X connect 28 0 22 0;
+#X connect 29 0 20 0;
+#X connect 30 0 17 0;
+#X connect 31 0 32 0;
+#X connect 32 0 14 0;
+#X connect 33 0 13 0;
+#X connect 34 0 5 0;
+#X connect 35 0 8 0;
+#X connect 37 0 40 0;
+#X connect 37 1 41 0;
+#X connect 37 2 42 0;
+#X connect 37 3 43 0;
+#X connect 37 4 44 0;
+#X connect 37 5 45 0;
+#X connect 37 6 46 0;
+#X connect 37 7 47 0;
+#X connect 37 8 48 0;
+#X connect 37 9 49 0;
+#X connect 37 10 50 0;
+#X connect 37 11 51 0;
+#X connect 37 12 52 0;
+#X connect 37 13 53 0;
+#X connect 37 14 54 0;
+#X connect 37 15 55 0;
+#X connect 38 0 3 0;
+#X connect 38 1 3 1;
+#X connect 38 2 3 2;
