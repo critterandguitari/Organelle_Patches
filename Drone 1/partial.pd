@@ -1,4 +1,4 @@
-#N canvas 91 61 808 930 10;
+#N canvas 92 58 808 930 10;
 #X obj 152 18 r notes;
 #X obj 223 114 stripnote;
 #X obj 223 217 % 24;
@@ -30,7 +30,7 @@
 #X obj 551 515 r~ rolloff;
 #X obj 511 556 *~;
 #X obj 414 617 +~ 1;
-#X obj 162 789 *~ 0.25;
+#X obj 162 789 *~ 0.1;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 16 0;

@@ -1,4 +1,4 @@
-#N canvas 115 96 1611 851 10;
+#N canvas 116 93 1611 851 10;
 #X declare -path ./rj;
 #X declare -path ./rj;
 #X declare -path ./rj;
@@ -45,7 +45,7 @@
 #X obj 778 196 i;
 #X obj 131 168 pack;
 #X obj 131 136 notein 1;
-#N canvas 5 50 732 690 main-metro 0;
+#N canvas 6 50 732 690 main-metro 1;
 #X obj 227 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 356 90 5 0 0 0 - - -, f 5;
@@ -190,6 +190,9 @@
 #X connect 17 0 2 0;
 #X restore 235 323 pd gettime;
 #X obj 324 286 s midi-sync;
+#X obj 554 530 r midi-sync;
+#X msg 554 552 248;
+#X obj 554 574 midiout;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 1 0 14 0;
@@ -213,11 +216,13 @@
 #X connect 21 0 18 0;
 #X connect 22 0 15 0;
 #X connect 22 1 9 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
 #X restore 683 254 pd main-metro;
 #X obj 171 201 stripnote;
 #X obj 1138 439 r reset-reclocker;
 #N canvas 16 50 1044 777 midi-file-player 0;
-#X obj 308 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 308 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 337 420 read \$1.mid;
 #X msg 271 174 1;
@@ -504,7 +509,7 @@ Aux stops playback.;
 #X obj 228 252 f 0;
 #X obj 167 150 sel 1 0;
 #X obj 149 64 t f f b f;
-#X obj 166 200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 166 200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 183 178 1;
 #X obj 165 222 sel 0 1;

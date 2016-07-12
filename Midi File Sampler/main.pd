@@ -1,19 +1,19 @@
-#N canvas 0 22 1440 799 10;
+#N canvas 4 50 1547 903 10;
 #X obj 171 421 unpack 0 0;
 #X obj 171 481 pack 0 0 0;
 #X obj 171 446 poly 6 1;
-#X obj 1109 573 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1100 524 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 1176 665 \; led 7;
-#X msg 1098 735 \; led 0;
-#X obj 1100 671 delay 100;
-#X msg 946 775 \; led 0;
-#X obj 951 651 delay 100;
-#X obj 1054 523 sel 0 1 2 3;
-#X obj 1054 573 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 1167 616 \; led 7;
+#X msg 1089 686 \; led 0;
+#X obj 1091 622 delay 100;
+#X msg 952 696 \; led 0;
+#X obj 942 602 delay 100;
+#X obj 1045 474 sel 0 1 2 3;
+#X obj 1045 524 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 1147 489 flash led on quarter and half notes;
-#X obj 1054 487 counter-up 4;
+#X text 1138 440 flash led on quarter and half notes;
+#X obj 1045 438 counter-up 4;
 #X obj 40 80 s midiOutGate;
 #X obj 40 28 loadbang;
 #X msg 40 50 0;
@@ -31,9 +31,9 @@
 #X obj 131 168 pack;
 #X obj 131 136 notein 1;
 #X obj 171 201 stripnote;
-#X obj 1094 452 r reset-reclocker;
-#N canvas 12 50 1044 777 midi-file-player 0;
-#X obj 308 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 1085 403 r reset-reclocker;
+#N canvas 13 50 1044 777 midi-file-player 0;
+#X obj 308 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 337 420 read \$1.mid;
 #X msg 271 174 1;
@@ -45,7 +45,7 @@
 #X msg 358 167 0;
 #X obj 251 335 spigot;
 #X obj 287 132 t b b f b b;
-#N canvas 17 50 884 852 re-clocker 0;
+#N canvas 18 50 884 852 re-clocker 0;
 #X obj 312 696 delay 1;
 #X obj 409 638 / 10;
 #X obj 409 584 r mspq;
@@ -144,7 +144,7 @@ itself when tempo changes.;
 #X obj 287 97 inlet;
 #X obj 273 689 outlet;
 #X obj 385 224 s reset-reclocker;
-#N canvas 103 50 1323 751 midi-filer 0;
+#N canvas 104 50 1323 751 midi-filer 0;
 #X floatatom 423 303 15 0 0 0 current_tick - -, f 15;
 #X text 759 429 note off events;
 #X obj 350 401 route 144 145 146 147 148 149 150 151 152 153 154 155
@@ -294,18 +294,18 @@ loaded (1.mid) \, re-clocker is reset \, clocks are enabled;
 #X connect 15 0 13 0;
 #X connect 17 0 16 0;
 #X restore 171 386 pd midi-file-player;
-#X obj 1054 410 r midi-file-q;
+#X obj 1045 361 r midi-file-q;
 #X obj 171 289 % 24;
 #X obj 171 263 abs;
 #X text 211 267 wrap around. all midi notes trigger a file;
 #X obj 171 236 expr if ($f1 > 59 \, $f1 - 60 \, $f1 - 12);
 #X obj 171 315 + 1;
 #X obj 171 170 r notes;
-#X text 1080 382 flasher;
-#X msg 1032 676 \; led 6;
-#X obj 457 93 loadbang;
+#X text 1071 333 flasher;
+#X msg 1023 627 \; led 6;
+#X obj 433 89 loadbang;
 #X text 119 49 disable keys sending midi;
-#X msg 457 115 \; screenLine1 1: Tempo \; screenLine2 2: Resonance
+#X msg 433 111 \; screenLine1 1: Tempo \; screenLine2 2: Resonance
 \; screenLine3 3: Cutoff \; screenLine4 4: Decay \; screenLine5 Aux:
 Kill \;;
 #X text 553 16 MIDI file player \, keys select a midi file to play.
@@ -326,12 +326,12 @@ Aux stops playback.;
 #X obj 1013 165 change -1;
 #X obj 1169 222 s screenLine4;
 #X obj 1013 223 s screenLine3;
-#X obj 705 389 r dur;
-#X obj 705 411 / 44100;
-#X floatatom 705 433 5 0 0 0 - - -, f 5;
+#X obj 723 447 r dur;
+#X obj 723 469 / 44100;
+#X floatatom 723 491 5 0 0 0 - - -, f 5;
 #X obj 1287 314 s~ mod;
-#X floatatom 591 432 15 0 0 0 - - -, f 15;
-#X text 568 366 length of sound in seconds and samples;
+#X floatatom 609 490 15 0 0 0 - - -, f 15;
+#X text 586 424 length of sound in seconds and samples;
 #N canvas 157 194 1161 613 record-load-sample 0;
 #X msg 247 286 bang;
 #X obj 306 261 r~ inL;
@@ -450,7 +450,7 @@ down;
 #X obj 250 234 f 0;
 #X obj 189 132 sel 1 0;
 #X obj 171 46 t f f b f;
-#X obj 188 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 188 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 205 160 1;
 #X obj 187 204 sel 0 1;
@@ -476,15 +476,15 @@ down;
 #X connect 12 0 6 0;
 #X restore 171 347 pd toggle-keys;
 #X text 1234 258 for the sample players;
-#X obj 1187 579 r enable-flasher;
-#X obj 960 716 spigot 1;
-#X obj 1030 628 spigot 1;
-#X obj 1100 695 spigot 1;
-#X obj 1165 640 spigot 1;
-#X text 1201 551 disable flasher when recording;
+#X obj 1178 530 r enable-flasher;
+#X obj 951 667 spigot 1;
+#X obj 1021 579 spigot 1;
+#X obj 1091 646 spigot 1;
+#X obj 1156 591 spigot 1;
+#X text 1192 502 disable flasher when recording;
 #X text 321 524 play midi file on sampler;
-#N canvas 5 50 732 690 main-metro 0;
-#X obj 227 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 7 50 732 690 main-metro 0;
+#X obj 227 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 356 90 5 0 0 0 - - -, f 5;
 #X text 412 62 dial in bpm;
@@ -501,7 +501,7 @@ down;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X restore 365 122 pd dialinbpm;
-#N canvas 142 50 870 723 mainmetro 0;
+#N canvas 144 50 870 723 mainmetro 0;
 #X obj 276 45 inlet;
 #X obj 329 45 inlet;
 #X obj 271 183 metro 50;
@@ -535,7 +535,7 @@ down;
 #X obj 325 207 loadbang;
 #X msg 325 229 0;
 #X text 7 115 reset back to 0 when metro stops;
-#X obj 290 139 s reset-metronome;
+#X obj 297 120 s reset-metronome;
 #X obj 619 435 r reset-metronome;
 #X obj 262 86 t f b;
 #X connect 0 0 31 0;
@@ -592,7 +592,7 @@ down;
 #X obj 287 645 s screenLine1;
 #X msg 287 613 1: Tempo \$1 BPM;
 #X msg 122 611 1: Tempo \$1 BPM MIDI;
-#N canvas 37 600 695 344 gettime 0;
+#N canvas 40 591 695 344 gettime 0;
 #X obj 238 7 inlet;
 #X obj 131 181 timer;
 #X obj 131 273 outlet;
@@ -628,6 +628,10 @@ down;
 #X connect 17 0 2 0;
 #X restore 235 323 pd gettime;
 #X obj 324 286 s midi-sync;
+#X obj 538 568 midiout;
+#X obj 538 520 r midi-sync;
+#X msg 538 542 248;
+#X text 544 489 output midi sync;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 1 0 14 0;
@@ -651,6 +655,8 @@ down;
 #X connect 21 0 18 0;
 #X connect 22 0 15 0;
 #X connect 22 1 9 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
 #X restore 687 243 pd main-metro;
 #X connect 0 0 2 0;
 #X connect 0 1 2 1;
