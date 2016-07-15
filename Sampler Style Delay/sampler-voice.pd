@@ -1,7 +1,7 @@
-#N canvas 289 50 1550 918 10;
+#N canvas 290 50 1550 918 10;
 #N canvas 0 50 450 278 (subpatch) 0;
-#X array \$1-array 168000 float 2;
-#X coords 0 1 168000 -1 335 251 1 0 0;
+#X array \$1-array 140688 float 2;
+#X coords 0 1 140688 -1 335 251 1 0 0;
 #X restore 882 260 graph;
 #X obj 1238 395 soundfiler;
 #X floatatom 1238 426 10 0 0 0 - - -, f 10;
@@ -13,7 +13,7 @@
 #X obj 140 285 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 280 383 0 0;
-#X obj 111 532 pack 0 0;
+#X obj 140 615 pack 0 0;
 #X floatatom 167 474 5 0 0 0 - - -, f 5;
 #X floatatom 175 407 5 0 0 0 - - -, f 5;
 #X obj 121 430 f;
