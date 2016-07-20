@@ -1,4 +1,4 @@
-#N canvas 204 50 1667 968 10;
+#N canvas 205 50 1667 968 10;
 #X obj 495 326 send~ f;
 #X obj 495 217 sig~;
 #X obj 494 248 lop~ 5;
@@ -42,7 +42,7 @@
 #X msg 496 123 2400;
 #X obj 497 103 loadbang;
 #X msg 356 305 1: Mix \$1 %;
-#N canvas 82 50 766 924 FFT 1;
+#N canvas 83 50 766 924 FFT 0;
 #X obj 500 736 r knob1;
 #X obj 481 29 r~ inL;
 #N canvas 10 50 612 483 crossfade 0;
