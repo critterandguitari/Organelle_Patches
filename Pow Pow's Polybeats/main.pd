@@ -1,4 +1,4 @@
-#N canvas 150 182 1660 824 10;
+#N canvas 151 179 1660 824 10;
 #X text 94 70 Sampler Manager;
 #X obj 411 434 throw~ outL;
 #X obj 309 434 throw~ outR;
@@ -27,11 +27,11 @@
 #X obj 687 84 r aux;
 #X obj 687 110 sel 1;
 #X obj 687 144 s cancel;
-#X obj 730 221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 734 205 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 650 176 0;
-#X obj 774 163 r start-metro;
-#X msg 774 185 1;
+#X obj 774 147 r start-metro;
+#X msg 777 165 1;
 #X obj 1077 471 r quarters;
 #X obj 1161 470 r reset-metronome;
 #X obj 1131 603 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -122,6 +122,7 @@ of beat. leads to interesting polyrythms.;
 #X obj 764 305 change -1;
 #X msg 764 329 \; screenLine2 2: Tempo \$1 BPM MIDI \;;
 #X msg 1019 334 \; screenLine2 2: Tempo \$1 BPM \;;
+#X obj 764 221 change;
 #X connect 3 0 106 0;
 #X connect 4 0 46 0;
 #X connect 5 0 15 0;
@@ -147,7 +148,7 @@ of beat. leads to interesting polyrythms.;
 #X connect 25 0 26 0;
 #X connect 26 0 27 0;
 #X connect 26 0 29 0;
-#X connect 28 0 16 0;
+#X connect 28 0 116 0;
 #X connect 29 0 28 0;
 #X connect 30 0 31 0;
 #X connect 31 0 28 0;
@@ -205,3 +206,4 @@ of beat. leads to interesting polyrythms.;
 #X connect 111 0 115 0;
 #X connect 112 0 113 0;
 #X connect 113 0 114 0;
+#X connect 116 0 16 0;
