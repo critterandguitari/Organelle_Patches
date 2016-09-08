@@ -1,5 +1,5 @@
-#N canvas 643 50 803 811 10;
-#X obj 214 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 647 50 803 811 10;
+#X obj 214 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 355 176 5 0 0 0 - - -, f 5;
 #N canvas 285 555 292 294 mstobpm 0;
@@ -33,7 +33,7 @@
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X restore 298 223 pd dialinbpm;
-#N canvas 158 50 902 691 mainmetro 1;
+#N canvas 159 50 902 691 mainmetro 0;
 #X obj 254 49 inlet;
 #X obj 443 49 inlet;
 #X obj 280 156 metro 50;
@@ -172,11 +172,15 @@ ignored in presence of MIDI clock. The mainmetro sub patch switches
 automatically between MIDI clock and 24 pulses per quarter note internal
 clock. The resultant pulses are sent out as MIDI clock to sync downstream
 gear.;
+#X obj 154 624 i;
+#X obj 303 606 i;
+#X obj 214 548 r get-bpm;
+#X obj 235 667 print;
 #X connect 0 0 5 0;
 #X connect 1 0 4 0;
-#X connect 1 0 8 0;
+#X connect 1 0 37 0;
 #X connect 2 0 3 0;
-#X connect 3 0 9 0;
+#X connect 3 0 36 0;
 #X connect 4 0 5 1;
 #X connect 5 0 2 0;
 #X connect 5 0 23 0;
@@ -201,3 +205,8 @@ gear.;
 #X connect 26 0 27 0;
 #X connect 27 0 28 0;
 #X connect 33 0 28 0;
+#X connect 36 0 9 0;
+#X connect 37 0 8 0;
+#X connect 37 0 39 0;
+#X connect 38 0 37 0;
+#X connect 38 0 36 0;
