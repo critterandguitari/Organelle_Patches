@@ -1,0 +1,3 @@
+1904.04 notes_seq 74 100;
+33.3787 notes_seq 74 0;
+786.576 notes_seq 0 0;
