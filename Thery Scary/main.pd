@@ -1,4 +1,4 @@
-#N canvas 232 96 1423 645 10;
+#N canvas 233 93 1423 645 10;
 #X obj 200 544 throw~ outL;
 #X obj 109 544 throw~ outR;
 #X obj 810 386 loadbang;
@@ -24,7 +24,7 @@
 #X obj 1189 298 s screenLine4;
 #X obj 1189 195 * 100;
 #X obj 1189 217 i;
-#N canvas 10 50 1054 732 theremin 0;
+#N canvas 11 50 1054 732 theremin 1;
 #X obj 540 103 t f f;
 #X obj 542 128 *;
 #X obj 359 49 r notes;
