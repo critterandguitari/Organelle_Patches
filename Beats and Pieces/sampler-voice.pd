@@ -58,11 +58,11 @@
 #X floatatom 437 511 5 0 0 0 - - -, f 5;
 #X obj 412 545 pack;
 #X msg 410 574 \$1 \$2;
-#X obj 464 441 r knob2;
+#X obj 458 421 r knob2;
 #X msg 201 469 0 0;
 #X obj 535 387 r \$1-duration;
 #X floatatom 532 414 5 0 0 0 - - -, f 5;
-#X obj 475 478 *;
+#X obj 469 458 *;
 #X text 502 360 release set by knob 2 \, up to 100% of sample length
 ;
 #X obj 199 46 t b a;
@@ -72,6 +72,7 @@
 #X obj 349 627 line~;
 #X obj 261 356 delay 2;
 #X msg 304 517 1 1;
+#X obj 459 481 + 5;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 14 0;
@@ -120,7 +121,7 @@
 #X connect 54 0 6 0;
 #X connect 55 0 56 0;
 #X connect 56 0 57 1;
-#X connect 57 0 50 0;
+#X connect 57 0 66 0;
 #X connect 59 0 45 0;
 #X connect 59 1 60 0;
 #X connect 60 0 41 0;
@@ -131,3 +132,4 @@
 #X connect 63 0 38 1;
 #X connect 64 0 36 0;
 #X connect 65 0 63 0;
+#X connect 66 0 50 0;
