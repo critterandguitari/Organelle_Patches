@@ -1,0 +1,5 @@
+1 seq-notes 82 100;
+64.8549 seq-notes 82 0;
+712.111 seq-notes 82 100;
+66.3061 seq-notes 82 0;
+2240.27 seq-notes 0 0;
