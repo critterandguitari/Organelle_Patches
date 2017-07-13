@@ -1,4 +1,4 @@
-#N canvas 227 50 1651 959 10;
+#N canvas 228 50 1651 959 10;
 #X obj 969 42 loadbang;
 #X obj 948 168 soundfiler;
 #N canvas 0 50 450 300 (subpatch) 0;

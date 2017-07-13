@@ -1,4 +1,4 @@
-#N canvas 227 107 1450 853 10;
+#N canvas 228 104 1450 853 10;
 #X obj 862 408 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 862 508 qlist;
@@ -209,7 +209,7 @@ sequencer., f 69;
 #X msg 635 173 Enabled;
 #X msg 789 172 Recording;
 #X msg 553 440 read ./basslayer.txt;
-#X msg 703 306 write ./basslayer.txt;
+#X msg 620 305 write /tmp/state/basslayer.txt;
 #X connect 0 0 1 0;
 #X connect 1 1 6 0;
 #X connect 2 0 50 0;
