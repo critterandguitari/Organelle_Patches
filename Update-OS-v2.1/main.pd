@@ -1,0 +1,63 @@
+#N canvas 229 60 1269 790 10;
+#X obj 515 282 shell;
+#X obj 135 58 loadbang;
+#X obj 316 458 print;
+#X msg 129 91 \; screenLine1 Press Aux to begin. \; screenLine2 When
+the update is \; screenLine3 complete the \; screenLine4 Organelle
+will \; screenLine5 shutdown. \;;
+#X obj 493 95 sel 1;
+#X obj 494 62 r aux;
+#X obj 539 189 s clear-oled;
+#X msg 292 303 \; screenLine2 Updating... \;;
+#X obj 515 220 delay 1000;
+#N canvas 7 50 450 300 clear-oled 0;
+#X msg 91 123 \; oscOut send /oled/line/1 \; oscOut send /oled/line/2
+\; oscOut send /oled/line/3 \; oscOut send /oled/line/4 \; oscOut send
+/oled/line/5 \;;
+#X obj 91 47 r clear-oled;
+#X obj 91 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 139 206 pd clear-oled;
+#X msg 515 250 /usbdrive/Patches/Update-OS-v2.1/deploy.sh;
+#X obj 304 708 shell;
+#X obj 345 565 t b b;
+#X obj 304 646 delay 1000;
+#X msg 474 602 \; screenLine2 Sutting Down... \;;
+#X msg 305 675 /root/scripts/shutdown.sh;
+#X obj 456 525 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 367 526 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 709 595 \; screenLine2 File Problem. Try \; screenLine3 Downloading
+this \; screenLine4 patch again. \;;
+#X obj 495 128 spigot 1;
+#X obj 494 161 t b b b;
+#X msg 598 142 0;
+#X text 642 138 only once;
+#X obj 370 488 route sucess error;
+#X obj 472 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 2 0;
+#X connect 0 0 23 0;
+#X connect 1 0 3 0;
+#X connect 4 0 19 0;
+#X connect 5 0 4 0;
+#X connect 8 0 10 0;
+#X connect 10 0 0 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 13 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 18 0;
+#X connect 17 0 12 0;
+#X connect 19 0 20 0;
+#X connect 20 0 7 0;
+#X connect 20 0 8 0;
+#X connect 20 1 6 0;
+#X connect 20 2 21 0;
+#X connect 21 0 19 1;
+#X connect 23 0 17 0;
+#X connect 23 1 16 0;
+#X connect 24 0 10 0;
