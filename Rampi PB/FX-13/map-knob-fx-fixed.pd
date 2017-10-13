@@ -1,0 +1,19 @@
+#N canvas 456 256 527 356 10;
+#X text 118 235 to specific module in FX13;
+#X obj 38 130 r \$1-Fxs;
+#X text 209 7 arg1: instance number;
+#X text 209 47 arg3: module shortcut name;
+#X text 209 67 arg4: module shortcut parameter;
+#X obj 38 236 s \$3-\$1-\$4;
+#X obj 38 178 b;
+#X text 209 87 arg5: fixed value;
+#X obj 38 200 \$5;
+#X obj 38 154 sel \$3;
+#X text 70 200 Fixed param number;
+#X text 243 111 *** like map-knob-fx but send fixed value and don't
+print. use to init values if knobs are sparse., f 34;
+#X text 209 27 arg2: knob number(irrelevant);
+#X connect 1 0 9 0;
+#X connect 6 0 8 0;
+#X connect 8 0 5 0;
+#X connect 9 0 6 0;

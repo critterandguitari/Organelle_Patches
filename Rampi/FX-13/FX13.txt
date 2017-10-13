@@ -1,0 +1,14 @@
+PassThru pass;
+Bitcrusher bc;
+Chorus chor;
+ClipDistort dclip;
+Delay dly;
+TanDistort dtanh;
+Flanger flan;
+MoogLFO moogOscil;
+Panner pan;
+Phaser phaser;
+PitchShift ps;
+Reverb rev;
+SpectralDelay specdel;
+Tremolo trem;
