@@ -71,11 +71,11 @@
 #X obj 75 95 versioncheck 2;
 #X obj 400 71 ./FX-13/FX-13 1;
 #X obj 401 142 ./MasterMetro/MasterMetro;
-#X obj 401 117 ./Polybeats/Polybeats 1;
 #X obj 400 93 ./TunedDelay/TunedDelay 1;
 #X msg 74 258 \; screenLine1 Tuned Drums \; screenLine2 Effects \;
 screenLine3 Polybeats \; screenLine4 <-- Home \; screenLine5 \;;
-#X connect 1 0 17 0;
+#X obj 401 117 ./Polybeats/polybeats 1;
+#X connect 1 0 16 0;
 #X connect 3 0 12 0;
 #X connect 4 0 1 0;
 #X connect 5 0 4 0;

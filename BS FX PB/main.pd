@@ -79,7 +79,7 @@ screenLine3 Polybeats \; screenLine4 <-- Home \; screenLine5 \;;
 #X obj 400 71 ./FX-13/FX-13 1;
 #X obj 400 93 ./BasicSampler/BasicSampler 1;
 #X obj 401 142 ./MasterMetro/MasterMetro;
-#X obj 401 117 ./Polybeats/Polybeats 1;
+#X obj 401 117 ./Polybeats/polybeats 1;
 #X connect 1 0 13 0;
 #X connect 3 0 12 0;
 #X connect 4 0 1 0;
