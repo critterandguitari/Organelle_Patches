@@ -1,0 +1,9 @@
+#N canvas 253 675 450 300 10;
+#X obj 148 64 r p\$1k\$2;
+#X obj 148 86 s \$3;
+#X obj 148 116 r \$3-label;
+#X obj 148 159 list prepend \$2:;
+#X obj 148 191 s p\$1s\$2;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
