@@ -1,4 +1,4 @@
-#N canvas 61 432 677 437 10;
+#N canvas 64 423 677 437 10;
 #X declare -path patchmenu;
 #X obj 75 49 declare -path patchmenu;
 #X obj 75 230 patchmenu;
@@ -8,8 +8,8 @@
 #X obj 75 120 t b b;
 #X obj 41 50 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#N canvas 266 138 1301 783 mapping 1;
-#X obj 381 449 throw~ outL;
+#N canvas 357 154 1301 783 mapping 0;
+#X obj 380 444 throw~ outL;
 #X obj 503 450 throw~ outR;
 #X text 374 36 MIDI (keys) Routing;
 #X text 385 8 control routing;
@@ -49,8 +49,8 @@
 #X obj 1009 115 s p1s5;
 #X obj 1029 138 s p2s5;
 #X obj 1074 170 s p3s5;
-#X obj 774 291 r fs;
-#X obj 774 313 s bs-1-record-button;
+#X obj 785 320 r fs;
+#X obj 806 358 s bs-1-record-button;
 #X obj 610 59 r bs-1-record-button-led;
 #X connect 7 0 20 0;
 #X connect 9 0 0 0;
