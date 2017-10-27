@@ -1,0 +1,14 @@
+#N canvas 956 196 478 362 10;
+#X obj 68 31 Bitcrusher \$1;
+#X obj 68 51 Chorus \$1;
+#X obj 68 71 Dclip \$1;
+#X obj 68 91 Delay \$1;
+#X obj 68 111 Dtanh \$1;
+#X obj 68 131 Flanger \$1;
+#X obj 68 151 MoogOscil \$1;
+#X obj 68 171 Panner \$1;
+#X obj 68 191 Phaser \$1;
+#X obj 68 211 PitchShift \$1;
+#X obj 68 232 Reverb \$1;
+#X obj 68 253 SpectralDelay \$1;
+#X obj 68 274 Tremolo \$1;
