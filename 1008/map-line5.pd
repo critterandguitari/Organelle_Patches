@@ -1,0 +1,10 @@
+#N canvas 1187 438 450 300 10;
+#X obj 148 116 r \$2-label;
+#X obj 148 209 s p1s5;
+#X obj 156 187 s p2s5;
+#X obj 165 167 s p3s5;
+#X obj 168 143 s p4s5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 0 0 4 0;

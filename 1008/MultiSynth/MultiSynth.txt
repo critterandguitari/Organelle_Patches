@@ -1,0 +1,9 @@
+AnalogStyle as;
+BasicPoly bp;
+CZZ czz;
+RampSynth rampsyn;
+Rhodey rhodey;
+TunedDelay tunedel;
+Wavescanner wavs;
+BasicSampler bsamp;
+Sampler24 s24;

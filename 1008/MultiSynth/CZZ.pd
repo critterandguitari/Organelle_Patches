@@ -1,0 +1,389 @@
+#N canvas 393 180 1069 700 10;
+#X declare -path .;
+#X obj 917 -126 declare -path .;
+#X obj 786 -123 r \$0-GUI;
+#X obj 786 370 s \$0-control;
+#X text 8 669 ajf \, fbar \, 2010;
+#X obj 791 -105 g_synthcontrol;
+#X msg 378 45 env3a \$1;
+#X msg 369 173 env3d \$1;
+#X obj 369 197 s \$0-GUI;
+#X obj 378 69 s \$0-GUI;
+#X obj 376 467 s \$0-GUI;
+#X obj 376 341 s \$0-GUI;
+#X msg 376 317 env3s \$1;
+#X msg 376 443 env3r \$1;
+#X obj 884 371 route env3a env3d env3s env3r, f 43;
+#X obj 378 3 r czz-\$1-attack;
+#X obj 369 132 r czz-\$1-decay;
+#X obj 376 391 r czz-\$1-release;
+#X text 306 -65 Synth Module based off of the CZZ synth in rjdj.;
+#X obj 56 371 s~ czz-\$1-out;
+#X obj 958 415 s czz-\$1-adsrP-d;
+#X obj 1033 396 s czz-\$1-adsrP-s;
+#X obj 1108 420 s czz-\$1-adsrP-r;
+#X obj 96 -60 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 57 131 spigot;
+#X obj 128 34 bag;
+#X obj 128 -9 sel 0;
+#X msg 128 11 flush;
+#X obj 96 -33 t f f;
+#X obj 128 56 list append 0;
+#X obj 128 78 route list;
+#N canvas 865 230 466 366 synth 1;
+#X obj 101 279 u_cocollect;
+#X obj 142 200 t a b;
+#X obj 78 304 s \$0-GUI;
+#X obj 101 230 r \$0-control;
+#X obj 20 121 poly 4 1, f 10;
+#X obj 20 183 pack 0 0 0;
+#X obj 20 205 route 1 2 3 4;
+#X obj 128 325 r \$0-control;
+#X obj 216 375 r \$0-control;
+#X obj 176 356 r \$0-control;
+#X obj 21 480 *~ 1;
+#X obj 21 101 inlet;
+#X obj 21 502 outlet~;
+#X msg 327 190;
+#X msg 140 166 list save;
+#X obj 20 253 s_czz \$0-TAG \$1;
+#X obj 47 354 s_czz \$0-TAG \$1;
+#X obj 95 378 s_czz \$0-TAG \$1;
+#X obj 136 407 s_czz \$0-TAG \$1;
+#X connect 0 0 13 0;
+#X connect 1 0 15 1;
+#X connect 1 1 0 1;
+#X connect 3 0 15 1;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 4 2 5 2;
+#X connect 5 0 6 0;
+#X connect 6 0 15 0;
+#X connect 6 1 16 0;
+#X connect 6 2 17 0;
+#X connect 6 3 18 0;
+#X connect 7 0 16 1;
+#X connect 8 0 18 1;
+#X connect 9 0 17 1;
+#X connect 10 0 12 0;
+#X connect 11 0 4 0;
+#X connect 14 0 1 0;
+#X connect 15 0 10 0;
+#X connect 15 1 0 0;
+#X connect 15 1 2 0;
+#X connect 16 0 10 0;
+#X connect 17 0 10 0;
+#X connect 18 0 10 0;
+#X restore 57 168 pd synth;
+#N canvas 15 50 526 600 switcher 0;
+#X obj 113 261 t b b;
+#X obj 113 295 delay 5;
+#X obj 263 387 line~;
+#X msg 176 296 0 4;
+#X obj 133 476 *~;
+#X msg 113 327 0;
+#X obj 113 220 bang;
+#X msg 406 229 1;
+#X msg 359 193 1 4;
+#X obj 352 143 t b b b;
+#X obj 139 506 outlet~;
+#X obj 371 507 outlet;
+#X obj 112 48 inlet;
+#X obj 353 50 inlet;
+#X connect 0 0 1 0;
+#X connect 0 1 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 0;
+#X connect 4 0 10 0;
+#X connect 5 0 11 0;
+#X connect 6 0 0 0;
+#X connect 7 0 11 0;
+#X connect 8 0 2 0;
+#X connect 9 1 8 0;
+#X connect 9 2 7 0;
+#X connect 12 0 6 0;
+#X connect 13 0 9 0;
+#X restore 103 297 pd switcher;
+#X obj 103 268 sel 0 1;
+#X obj 103 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 56 345 *~;
+#X obj 177 321 switch~;
+#X obj 103 194 r czz-\$1-switch;
+#X obj 96 -124 r czz-\$1-notesswitch;
+#X obj 224 588 s \$0-GUI;
+#N canvas 19 50 1164 887 czz_presets 0;
+#X obj 91 26 inlet;
+#X obj 83 653 outlet name;
+#X obj 83 630 symbol;
+#X obj 166 652 outlet parms;
+#X obj 83 582 route name;
+#X msg 59 220 name Thin-Short-Bass \, mod3d 0.559055 \, mod3c 0.181102
+\, mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0.574803 \, mod1c 0.669291
+\, mod1b 0.0708661 \, mod1a 0.409449 \, osc3d 0.314961 \, osc3c 0.220472
+\, osc3b 0.527559 \, osc3a 0.409449 \, osc2d 0.559055 \, osc2c 0.645669
+\, osc2b 0.543307 \, osc2a 0.377953 \, osc1d 0.015748 \, osc1c 0 \,
+osc1b 0 \, osc1a 0 \, env3r 0.0472441 \, env3s 0.0393701 \, env3d 0.0551181
+\, env3a 0.0015748 \, env2r 0.0866142 \, env2s 0.0866142 \, env2d 0.0866142
+\, env2a 0.0472441 \, env1r 0.149606 \, env1s 0.0629921 \, env1d 0.0787402
+\, env1a 0 \,;
+#X msg 57 236 name Full-Square-Lead \, mod3d 0.251969 \, mod3c 0.181102
+\, mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0 \, mod1c 0 \, mod1b
+0 \, mod1a 1 \, osc3d 0.314961 \, osc3c 0.220472 \, osc3b 0.527559
+\, osc3a 0.409449 \, osc2d 0.559055 \, osc2c 0.645669 \, osc2b 0.543307
+\, osc2a 0.377953 \, osc1d 0.440945 \, osc1c 0 \, osc1b 0 \, osc1a
+0 \, env3r 0.023622 \, env3s 0.527559 \, env3d 0.0551181 \, env3a 0.00944882
+\, env2r 0.0393701 \, env2s 0.637795 \, env2d 0.0866142 \, env2a 0.0472441
+\, env1r 0.0314961 \, env1s 0.708661 \, env1d 0.0787402 \, env1a 0.19685
+\,;
+#X msg 58 253 name Dull-Brass \, mod3d 0.251969 \, mod3c 0.181102 \,
+mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0 \, mod1c 0 \, mod1b
+0 \, mod1a 0.188976 \, osc3d 0.251969 \, osc3c 0.220472 \, osc3b 0.527559
+\, osc3a 0.409449 \, osc2d 0.559055 \, osc2c 0.645669 \, osc2b 0.543307
+\, osc2a 0.377953 \, osc1d 0.952756 \, osc1c 0 \, osc1b 0 \, osc1a
+0.440945 \, env3r 0.00787402 \, env3s 0.0866142 \, env3d 0.0944882
+\, env3a 0.0330709 \, env2r 0.0393701 \, env2s 0.102362 \, env2d 0.23622
+\, env2a 0.645669 \, env1r 0.0708661 \, env1s 0.0866142 \, env1d 0.0472441
+\, env1a 0.0551181 \,;
+#X msg 59 268 name Slow-Hollow \, mod3d 0.212598 \, mod3c 0.181102
+\, mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0.0314961 \, mod1c 0.0314961
+\, mod1b 0.220472 \, mod1a 0.866142 \, osc3d 0.251969 \, osc3c 0.220472
+\, osc3b 0.527559 \, osc3a 0.409449 \, osc2d 0.19685 \, osc2c 0.228346
+\, osc2b 0.165354 \, osc2a 0.0944882 \, osc1d 0.440945 \, osc1c 0.0629921
+\, osc1b 0.511811 \, osc1a 0.0866142 \, env3r 0.125984 \, env3s 0.244094
+\, env3d 0.354331 \, env3a 0.655118 \, env2r 0.0787402 \, env2s 0.692913
+\, env2d 0.291339 \, env2a 0.393701 \, env1r 0.133858 \, env1s 0.519685
+\, env1d 0.448819 \, env1a 0.771654 \,;
+#X msg 58 282 name Slow-Thin \, mod3d 0.212598 \, mod3c 0.181102 \,
+mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0 \, mod1c 0 \, mod1b
+0.748031 \, mod1a 0.716535 \, osc3d 0.251969 \, osc3c 0.220472 \, osc3b
+0.527559 \, osc3a 0.409449 \, osc2d 0.19685 \, osc2c 0.228346 \, osc2b
+0.165354 \, osc2a 0.0944882 \, osc1d 0.0708661 \, osc1c 0.125984 \,
+osc1b 0.346457 \, osc1a 0.0866142 \, env3r 0.125984 \, env3s 0.244094
+\, env3d 0.354331 \, env3a 0.749606 \, env2r 0.0393701 \, env2s 0.440945
+\, env2d 0.141732 \, env2a 0.0314961 \, env1r 0.133858 \, env1s 0.212598
+\, env1d 0.125984 \, env1a 0.0629921 \,;
+#X obj 483 146 loadbang;
+#X msg 483 175 env1a color 128 \, env1a label TONE-ATTACK \, env1d
+color 128 \, env1d label TONE-DECAY \, env1r color 128 \, env1r label
+TONE-REL \, env1s color 128 \, env1s label TONE-SUS \, env2a color
+128 \, env2a label WIDTH-ATTACK \, env2d color 128 \, env2d label WIDTH-DECAY
+\, env2r color 128 \, env2r label WIDTH-REL \, env2s color 128 \, env2s
+label WIDTH-SUS \, env3a color 128 \, env3a label AMP-ATTACK \, env3d
+color 128 \, env3d label AMP-DECAY \, env3r color 128 \, env3r label
+AMP-REL \, env3s color 128 \, env3s label AMP-SUS \, mod1a color 128
+\, mod1a label FILTER-AMT \, mod1b color 128 \, mod1b label DETUNE
+\, mod1c color 128 \, mod1c label SYNC-AMT \, mod1d color 2 \, mod2a
+color 2 \, mod2b color 2 \, mod2c color 2 \, mod2d color 2 \, mod3a
+color 2 \, mod3b color 2 \, mod3c color 2 \, mod3d color 128 \, mod3d
+label VOLME \, osc1a color 128 \, osc1a label OSC1-PW \, osc1b color
+128 \, osc1b label OSC2-PW \, osc1c color 128 \, osc1c label OSC1-PWM
+osc1d color 128 \, osc1d label OSC2-PWM \, osc2a color 2 \, osc2b color
+2 \, osc2c color 2 \, osc2d color 2 \, osc3a color 2 \, osc3b color
+2 \, osc3c color 2 \, osc3d color 2 \,;
+#X text 481 92 set up the interface to be human readable and show which
+controls are actually used;
+#X text 483 122 Requires modified [g-hsl];
+#X msg 341 750 name Crazy Thing \, mod3d 0.23622 \, mod3c 0.181102
+\, mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0 \, mod1c 1 \, mod1b
+0 \, mod1a 0.0314961 \, osc3d 0.251969 \, osc3c 0.220472 \, osc3b 0.527559
+\, osc3a 0.409449 \, osc2d 0.19685 \, osc2c 0.228346 \, osc2b 0.165354
+\, osc2a 0.0944882 \, osc1d 0.732283 \, osc1c 0.740157 \, osc1b 1 \,
+osc1a 1 \, env3r 0.0752688 \, env3s 0.748778 \, env3d 0.975562 \, env3a
+0.0322581 \, env2r 0.0393701 \, env2s 0.440945 \, env2d 0.0787402 \,
+env2a 0 \, env1r 0.76378 \, env1s 0 \, env1d 1 \, env1a 0.0708661 \,
+;
+#X msg 533 434 name lazer \, mod3d 0.212598 \, mod3c 0.181102 \, mod3b
+0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701 \, mod2b
+0.220472 \, mod2a 0.472441 \, mod1d 0 \, mod1c 1 \, mod1b 0.448819
+\, mod1a 0.0629921 \, osc3d 0.251969 \, osc3c 0.220472 \, osc3b 0.527559
+\, osc3a 0.409449 \, osc2d 0.19685 \, osc2c 0.228346 \, osc2b 0.165354
+\, osc2a 0.0944882 \, osc1d 0.834646 \, osc1c 0.692913 \, osc1b 0.92126
+\, osc1a 0.677165 \, env3r 0.0342131 \, env3s 0 \, env3d 0.140762 \,
+env3a 0 \, env2r 0.0393701 \, env2s 1 \, env2d 0.661417 \, env2a 0.314961
+\, env1r 0.456693 \, env1s 0.110236 \, env1d 0.0314961 \, env1a 0 \,
+;
+#X obj 91 50 sel 0 1 2 3 4 5 6 7 8 9;
+#X msg 544 587 name Bassic \, mod3d 0.9 \, mod3c 0.181102 \, mod3b
+0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701 \, mod2b
+0.220472 \, mod2a 0.472441 \, mod1d 0 \, mod1c 0 \, mod1b 0.0314961
+\, mod1a 0.0629921 \, osc3d 0.251969 \, osc3c 0.220472 \, osc3b 0.527559
+\, osc3a 0.409449 \, osc2d 0.19685 \, osc2c 0.228346 \, osc2b 0.165354
+\, osc2a 0.0944882 \, osc1d 0.566929 \, osc1c 0.0708661 \, osc1b 0.92126
+\, osc1a 0.0551181 \, env3r 0.0551181 \, env3s 0.75 \, env3d 0.204724
+\, env3a 0.00023622 \, env2r 0.0393701 \, env2s 0.440945 \, env2d 0.661417
+\, env2a 0.314961 \, env1r 0.133858 \, env1s 0.724409 \, env1d 0.015748
+\, env1a 0.669291 \,;
+#X msg 1018 285 name FB-String-Brass1 \, mod3d 0.9 \, mod3c 0.181102
+\, mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0.299213 \, mod1c 0.125984
+\, mod1b 0.19685 \, mod1a 0.133858 \, osc3d 0.314961 \, osc3c 0.220472
+\, osc3b 0.527559 \, osc3a 0.409449 \, osc2d 0.559055 \, osc2c 0.645669
+\, osc2b 0.543307 \, osc2a 0.377953 \, osc1d 0.9 \, osc1c 0.307087
+\, osc1b 0.614173 \, osc1a 0.866142 \, env3r 0.133858 \, env3s 0.8
+\, env3d 0.314961 \, env3a 0.259843 \, env2r 0.637795 \, env2s 0.401575
+\, env2d 0.338583 \, env2a 0.299213 \, env1r 0.149606 \, env1s 0.110236
+\, env1d 0.0551181 \, env1a 0.0551181 \,;
+#X msg 1044 571 name Gentle-Sync \, mod3d 0.7 \, mod3c 0.181102 \,
+mod3b 0.173228 \, mod3a 0.275591 \, mod2d 0.141732 \, mod2c 0.393701
+\, mod2b 0.220472 \, mod2a 0.472441 \, mod1d 0.574803 \, mod1c 0.669291
+\, mod1b 0.511811 \, mod1a 0.133858 \, osc3d 0.314961 \, osc3c 0.220472
+\, osc3b 0.527559 \, osc3a 0.409449 \, osc2d 0.559055 \, osc2c 0.645669
+\, osc2b 0.543307 \, osc2a 0.377953 \, osc1d 0.503937 \, osc1c 0.905512
+\, osc1b 0.0629921 \, osc1a 0.401575 \, env3r 0.133858 \, env3s 0.55
+\, env3d 0.314961 \, env3a 0.259843 \, env2r 0.0866142 \, env2s 0.0866142
+\, env2d 0.251969 \, env2a 0.141732 \, env1r 0.149606 \, env1s 0.110236
+\, env1d 0.952756 \, env1a 0 \,;
+#X connect 0 0 16 0;
+#X connect 2 0 1 0;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 11 0;
+#X connect 11 0 3 0;
+#X connect 14 0 4 0;
+#X connect 15 0 4 0;
+#X connect 16 0 18 0;
+#X connect 16 1 19 0;
+#X connect 16 2 14 0;
+#X connect 16 3 5 0;
+#X connect 16 4 6 0;
+#X connect 16 5 7 0;
+#X connect 16 6 8 0;
+#X connect 16 7 9 0;
+#X connect 16 8 17 0;
+#X connect 16 9 15 0;
+#X connect 17 0 4 0;
+#X connect 18 0 4 0;
+#X connect 19 0 4 0;
+#X restore 129 567 pd czz_presets;
+#X obj 129 461 * 8;
+#X obj 129 483 + 1;
+#X obj 129 505 int;
+#X obj 129 537 change -1;
+#X obj 170 477 r page-ready;
+#X msg 170 500 set -1;
+#X obj 129 426 r czz-\$1-preset;
+#X obj 64 426 loadbang;
+#X floatatom -2 462 5 0 0 0 - - -, f 5;
+#X obj 214 268 t f b b b b;
+#X obj 378 25 f;
+#X obj 369 154 f;
+#X obj 376 413 f;
+#X obj 376 297 f 0.7;
+#X obj 884 396 s czz-\$1-adsr-a;
+#X obj 496 112 + 1;
+#X obj 496 134 i;
+#X msg 496 156 Attack: \$1 ms;
+#X obj 57 -148 r ms-\$1-notes-in;
+#X obj 112 -91 r ms-\$1-noteskill-switch;
+#X obj 148 218 r ms-\$1-kill-switch;
+#X obj 496 184 s czz-\$1-attack-label;
+#X obj 497 232 + 1;
+#X obj 497 254 i;
+#X msg 497 276 Decay: \$1 ms;
+#X obj 497 304 s czz-\$1-decay-label;
+#X obj 496 43 t f f;
+#X obj 496 65 *;
+#X obj 527 409 s czz-\$1-sustain-label;
+#X obj 527 358 i;
+#X msg 527 380 Sustain: \$1%;
+#X obj 491 474 + 1;
+#X obj 491 496 i;
+#X obj 491 546 s czz-\$1-release-label;
+#X msg 491 518 Release: \$1 ms;
+#X obj 491 452 * 3999;
+#X obj 527 336 * 100;
+#X obj 497 210 * 3999;
+#X obj 496 90 * 1999;
+#X msg 64 449 4;
+#X connect 1 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 11 0 10 0;
+#X connect 12 0 9 0;
+#X connect 13 0 54 0;
+#X connect 13 1 19 0;
+#X connect 13 2 20 0;
+#X connect 13 3 21 0;
+#X connect 14 0 50 0;
+#X connect 15 0 51 0;
+#X connect 16 0 52 0;
+#X connect 22 0 27 0;
+#X connect 23 0 30 0;
+#X connect 24 0 28 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
+#X connect 27 0 23 1;
+#X connect 27 1 25 0;
+#X connect 28 0 29 0;
+#X connect 29 0 23 0;
+#X connect 30 0 34 0;
+#X connect 31 0 34 1;
+#X connect 31 1 35 0;
+#X connect 32 0 31 0;
+#X connect 32 1 31 1;
+#X connect 33 0 32 0;
+#X connect 33 0 49 0;
+#X connect 34 0 18 0;
+#X connect 36 0 33 0;
+#X connect 37 0 22 0;
+#X connect 39 1 38 0;
+#X connect 40 0 41 0;
+#X connect 41 0 42 0;
+#X connect 42 0 43 0;
+#X connect 43 0 39 0;
+#X connect 44 0 45 0;
+#X connect 45 0 43 0;
+#X connect 46 0 40 0;
+#X connect 47 0 79 0;
+#X connect 48 0 39 0;
+#X connect 49 1 52 0;
+#X connect 49 2 53 0;
+#X connect 49 3 51 0;
+#X connect 49 4 50 0;
+#X connect 50 0 5 0;
+#X connect 50 0 66 0;
+#X connect 51 0 6 0;
+#X connect 51 0 77 0;
+#X connect 52 0 12 0;
+#X connect 52 0 75 0;
+#X connect 53 0 11 0;
+#X connect 53 0 76 0;
+#X connect 55 0 56 0;
+#X connect 56 0 57 0;
+#X connect 57 0 61 0;
+#X connect 58 0 23 0;
+#X connect 58 0 24 0;
+#X connect 59 0 22 0;
+#X connect 60 0 33 0;
+#X connect 62 0 63 0;
+#X connect 63 0 64 0;
+#X connect 64 0 65 0;
+#X connect 66 0 67 0;
+#X connect 66 1 67 1;
+#X connect 67 0 78 0;
+#X connect 69 0 70 0;
+#X connect 70 0 68 0;
+#X connect 71 0 72 0;
+#X connect 72 0 74 0;
+#X connect 74 0 73 0;
+#X connect 75 0 71 0;
+#X connect 76 0 69 0;
+#X connect 77 0 62 0;
+#X connect 78 0 55 0;
+#X connect 79 0 39 0;

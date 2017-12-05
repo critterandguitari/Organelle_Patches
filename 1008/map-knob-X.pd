@@ -1,0 +1,11 @@
+#N canvas 269 157 696 508 10;
+#X obj 27 48 r p\$1k\$2;
+#X obj 27 143 list prepend \$2:;
+#X obj 27 175 s p\$1s\$2;
+#X obj 27 70 b;
+#X msg 27 92 x;
+#X text 143 73 passes an x when there is no knob value;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;

@@ -1,0 +1,13 @@
+#N canvas 517 367 632 484 10;
+#X text 22 10 a window for clickless looping;
+#X text 16 211 do not delete window.txt in this patch folder :);
+#X obj 19 67 loadbang;
+#X obj 19 99 symbol \$1;
+#X msg 19 179 \; \$1-\$2-crown read window.txt;
+#X obj 18 257 table \$1-\$2-crown 22050;
+#X text 289 83 Argument 2: Module Instance Number(\$1);
+#X text 289 63 Argument 1: Module chortname (e.g. s24);
+#X obj 19 144 pack s \$2;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 8 0 4 0;

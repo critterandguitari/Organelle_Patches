@@ -1,0 +1,18 @@
+#N canvas 57 111 1680 875 10;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$1-1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 331 168 graph;
+#X obj 347 488 tabread4~;
+#X obj 347 454 +~ 1;
+#X obj 347 431 *~ 97;
+#X obj 347 510 outlet~;
+#X obj 348 405 vline~;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 5 0 3 0;
