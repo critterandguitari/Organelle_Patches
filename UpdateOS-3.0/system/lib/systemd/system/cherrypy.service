@@ -1,0 +1,10 @@
+[Unit] 
+Description=Cherrypy Web Server
+
+[Service] 
+Type=simple 
+WorkingDirectory=/root/web/server
+ExecStart=/root/web/server/run.sh
+
+[Install] 
+WantedBy=multi-user.target
