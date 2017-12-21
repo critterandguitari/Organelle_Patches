@@ -1,0 +1,9 @@
+#N canvas 609 481 450 300 10;
+#X obj 148 64 r knob\$1;
+#X obj 148 86 s \$2;
+#X obj 148 116 r \$2-label;
+#X obj 148 191 s screenLine\$1;
+#X obj 148 138 list prepend \$1:;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
