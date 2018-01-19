@@ -1,0 +1,10 @@
+#N canvas 556 579 346 264 10;
+#X obj 155 61 r p\$1a;
+#X obj 155 143 s p\$1s5;
+#X obj 155 121 r \$2-aux-label;
+#X obj 155 91 s \$2-aux;
+#X obj 49 150 r \$2-led;
+#X obj 49 195 s p\$1led;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
