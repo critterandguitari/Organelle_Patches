@@ -1,4 +1,4 @@
-#N canvas 138 133 1660 824 10;
+#N canvas 139 130 1660 824 10;
 #X text 94 44 Sampler Manager;
 #X obj 411 434 throw~ outL;
 #X obj 309 434 throw~ outR;
@@ -27,7 +27,7 @@
 #X obj 654 93 r aux;
 #X obj 654 119 sel 1;
 #X obj 689 150 s cancel;
-#X obj 734 205 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 734 205 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 650 176 0;
 #X obj 774 147 r start-metro;
@@ -115,6 +115,9 @@ of beat. leads to interesting polyrythms.;
 #X msg 1354 205 \; screenLine3 3: Samp Vol: \$1 % \;;
 #X obj 1352 90 * 101;
 #X obj 1355 173 change -1;
+#X obj 1240 290 i;
+#X obj 1240 312 change -1;
+#X msg 1240 336 \; screenLine2 2: Tempo \$1 BPM LINK \;;
 #X connect 3 0 74 0;
 #X connect 4 0 46 0;
 #X connect 5 0 15 0;
@@ -129,6 +132,7 @@ of beat. leads to interesting polyrythms.;
 #X connect 15 0 14 0;
 #X connect 16 0 77 0;
 #X connect 16 1 75 0;
+#X connect 16 2 109 0;
 #X connect 17 0 16 1;
 #X connect 18 0 19 0;
 #X connect 19 0 17 0;
@@ -189,3 +193,5 @@ of beat. leads to interesting polyrythms.;
 #X connect 82 0 20 0;
 #X connect 107 0 66 0;
 #X connect 108 0 106 0;
+#X connect 109 0 110 0;
+#X connect 110 0 111 0;

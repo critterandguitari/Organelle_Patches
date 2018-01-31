@@ -1,4 +1,4 @@
-#N canvas 155 125 1636 804 10;
+#N canvas 156 122 1636 804 10;
 #X obj 354 379 throw~ outL;
 #X obj 252 379 throw~ outR;
 #X obj 19 280 loadbang;
@@ -111,6 +111,9 @@
 #X obj 278 101 distortion-voice 20;
 #X obj 275 146 distortion-voice 22;
 #X obj 275 168 distortion-voice 23;
+#X obj 1253 264 i;
+#X obj 1253 286 change -1;
+#X msg 1253 310 \; screenLine2 2: Tempo \$1 BPM LINK \;;
 #X connect 2 0 76 0;
 #X connect 3 0 7 0;
 #X connect 4 0 5 0;
@@ -118,6 +121,7 @@
 #X connect 7 0 77 0;
 #X connect 8 0 64 0;
 #X connect 8 1 62 0;
+#X connect 8 2 107 0;
 #X connect 9 0 8 1;
 #X connect 10 0 11 0;
 #X connect 11 0 9 0;
@@ -183,3 +187,5 @@
 #X connect 78 0 80 0;
 #X connect 80 0 75 0;
 #X connect 83 0 70 0;
+#X connect 107 0 108 0;
+#X connect 108 0 109 0;

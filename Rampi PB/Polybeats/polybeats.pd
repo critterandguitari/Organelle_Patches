@@ -1,4 +1,4 @@
-#N canvas 520 117 1286 843 10;
+#N canvas 521 114 1286 843 10;
 #N canvas 668 75 450 300 press-n-hold 0;
 #X obj 135 147 f;
 #X obj 135 94 sel 1;
@@ -59,7 +59,7 @@
 #X obj 527 54 * 32;
 #X obj 530 102 i;
 #X msg 534 135 Division \$1;
-#X obj 533 167 s pb-\$1-div-label;
+#X obj 533 168 s pb-\$1-div-label;
 #X obj 489 220 s pb-\$1-div-local;
 #X msg 794 577 stop;
 #X obj 881 376 spigot 0;
@@ -139,8 +139,8 @@
 #X obj 543 470 s pb-\$1-swing-label;
 #X obj 518 598 s pb-\$1-ticks;
 #X msg 544 436 Swing \$1 %;
-#X msg 60 660 [ \$1 ] Notes Latched;
-#X obj 60 686 s pb-\$1-aux-label;
+#X msg 70 645 [ \$1 ] Notes Latched;
+#X obj 53 684 s pb-\$1-aux-label;
 #X connect 0 0 20 0;
 #X connect 2 0 5 1;
 #X connect 2 0 4 1;

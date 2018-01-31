@@ -1,4 +1,4 @@
-#N canvas 29 81 1804 906 10;
+#N canvas 34 66 1804 906 10;
 #X obj 243 818 throw~ outL;
 #X obj 346 823 throw~ outR;
 #X obj 90 638 pack 0 0 0, f 11;
@@ -22,10 +22,10 @@
 #X obj 1630 206 + 10;
 #N canvas 4 50 450 278 (subpatch) 0;
 #X array seqvel 33 float 3;
-#A 0 37.3311 37.3311 126.876 126.876 5.58105 97.4824 0 120.675 126.876
-126.876 126.876 0 126.876 126.876 0 126.876 0 126.876 0 77.8867 0 103.312
-23.3164 106.164 43.7803 19.4717 66.6006 108.521 36.4629 14.0146 101.079
-125.636 2;
+#A 0 67.6589 67.6589 67.6589 67.6589 67.6589 67.6589 67.6589 67.6589
+126.876 126.876 126.876 0 126.876 126.876 0 126.876 0 126.876 0 77.8867
+0 103.312 23.3164 106.164 43.7803 19.4717 66.6006 108.521 36.4629 14.0146
+101.079 125.636 2;
 #X coords 0 128 33 0 200 140 1 0 0;
 #X restore 756 286 graph;
 #X floatatom 279 401 5 0 0 0 - - -, f 5;
@@ -34,13 +34,13 @@
 #X obj 563 223 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 620 332 0;
-#N canvas 372 50 1126 994 seqplayer 0;
+#N canvas 375 50 1126 994 seqplayer 0;
 #X floatatom 130 231 5 0 0 0 - - -, f 5;
 #X obj 367 708 tabread seq;
 #X floatatom 368 732 5 0 0 0 - - -, f 5;
 #X floatatom 366 664 5 0 0 0 - - -, f 5;
 #X obj 165 768 delay;
-#X obj 180 442 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 180 442 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 179 393 1;
 #X obj 220 445 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -368,7 +368,7 @@ directly to output if disabled;
 #X msg 1443 317 3: Tone \$1;
 #X text 528 11 states are: 0 = play mode \, 1 = punch in \, 2 = play
 w latch, f 70;
-#N canvas 33 50 919 857 seqpuncher 0;
+#N canvas 34 50 919 857 seqpuncher 0;
 #X obj 242 626 tabwrite seq;
 #X obj 244 211 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -477,21 +477,25 @@ to Punch \;;
 #X obj 1125 211 * 250;
 #X obj 1125 237 + 10;
 #X obj 316 778 *~ 0.25;
-#N canvas 9 50 881 531 display-tempo 0;
-#X obj 117 52 inlet;
-#X obj 346 43 inlet;
-#X obj 317 129 i;
-#X obj 130 148 i;
-#X msg 479 631 \; screenLine1 1: Tempo \$1 BPM \;;
-#X msg 167 638 \; screenLine1 1: Tempo \$1 BPM MIDI \;;
-#X obj 191 460 spigot;
-#X obj 428 450 spigot;
-#X obj 474 122 r state;
-#X obj 481 182 sel 1;
-#X msg 419 248 0;
-#X msg 501 247 1;
-#X obj 516 214 t b b;
-#X obj 567 331 s get-bpm;
+#N canvas 16 50 1169 809 display-tempo 0;
+#X obj 114 71 inlet;
+#X obj 309 83 inlet;
+#X obj 310 254 i;
+#X obj 123 273 i;
+#X msg 472 756 \; screenLine1 1: Tempo \$1 BPM \;;
+#X msg 160 763 \; screenLine1 1: Tempo \$1 BPM MIDI \;;
+#X obj 184 585 spigot;
+#X obj 421 575 spigot;
+#X obj 487 47 r state;
+#X obj 494 107 sel 1;
+#X msg 412 373 0;
+#X msg 494 372 1;
+#X obj 529 139 t b b;
+#X obj 681 258 i;
+#X obj 724 55 inlet;
+#X obj 745 605 spigot;
+#X msg 762 747 \; screenLine1 1: Tempo \$1 BPM LINK \;;
+#X obj 512 199 s gettempo;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
@@ -503,10 +507,15 @@ to Punch \;;
 #X connect 9 1 12 0;
 #X connect 10 0 7 1;
 #X connect 10 0 6 1;
+#X connect 10 0 15 1;
 #X connect 11 0 6 1;
 #X connect 11 0 7 1;
-#X connect 12 0 13 0;
+#X connect 11 0 15 1;
+#X connect 12 0 17 0;
 #X connect 12 1 11 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
 #X restore 1016 308 pd display-tempo;
 #X obj 1639 390 r state;
 #X obj 1639 412 == 1;
@@ -514,8 +523,8 @@ to Punch \;;
 #X obj 1639 434 ==;
 #N canvas 4 50 450 278 (subpatch) 0;
 #X array seq 33 float 3;
-#A 0 60 63 65 68 71 75 74 77 82 80 77 67 72 68 68 65 65 66 64 60 63
-65 72 72 66 66 66 66 62 62 62 62 22;
+#A 0 62 64 67 65 74 72 76 69 82 80 77 67 72 68 68 65 65 66 64 60 63
+65 72 72 66 66 66 66 62 62 62 62 8;
 #X coords 0 128 33 0 200 140 1 0 0;
 #X restore 756 127 graph;
 #X obj 90 703 voice;
@@ -630,6 +639,7 @@ to Punch \;;
 #X connect 91 0 92 0;
 #X connect 94 0 102 0;
 #X connect 94 1 102 1;
+#X connect 94 2 102 2;
 #X connect 95 0 94 0;
 #X connect 96 0 97 0;
 #X connect 97 0 95 0;

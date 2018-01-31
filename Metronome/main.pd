@@ -1,4 +1,4 @@
-#N canvas 321 74 1320 879 10;
+#N canvas 322 71 1320 879 10;
 #X obj 499 619 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 499 673 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -93,7 +93,7 @@ Aux: Start / Stop \;;
 #X msg 372 258 \; screenLine1 1: Tempo \$1 BPM \;;
 #X msg 110 264 \; screenLine1 1: Tempo \$1 BPM MIDI \;;
 #X obj 184 139 t f b;
-#X obj 184 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 184 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 184 84 sel 1;
 #X obj 399 348 midirealtimein;
@@ -102,6 +102,9 @@ Aux: Start / Stop \;;
 up;
 #X text 688 153 knob 2 selects beat accent;
 #X text 383 327 reset counter on midi start;
+#X obj 153 337 i;
+#X obj 153 359 change -1;
+#X msg 153 383 \; screenLine1 1: Tempo \$1 BPM LINK \;;
 #X connect 0 0 5 0;
 #X connect 1 0 55 0;
 #X connect 2 0 23 0;
@@ -159,6 +162,7 @@ up;
 #X connect 60 0 32 0;
 #X connect 62 0 68 0;
 #X connect 62 1 66 0;
+#X connect 62 2 80 0;
 #X connect 63 0 64 0;
 #X connect 64 0 65 0;
 #X connect 65 0 62 1;
@@ -174,3 +178,5 @@ up;
 #X connect 75 0 76 0;
 #X connect 76 0 16 0;
 #X connect 76 1 16 0;
+#X connect 80 0 81 0;
+#X connect 81 0 82 0;
