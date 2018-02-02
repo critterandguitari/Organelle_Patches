@@ -1,0 +1,16 @@
+#N canvas 0 0 266 180 10;
+#X obj 41 78 vcf~;
+#X obj 1 159 outlet~;
+#X obj 1 2 inlet~;
+#X obj 1 78 vcf~;
+#X obj 52 2 inlet~ f1;
+#X obj 123 2 inlet~ f2;
+#X obj 197 2 inlet res;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 0 1;
+#X connect 6 0 0 2;
+#X connect 6 0 3 2;

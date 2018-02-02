@@ -1,0 +1,17 @@
+Boing1[1];
+Boing2[2];
+Bounce1[3];
+Bounce2[4];
+Pour[5];
+Engine[6];
+Door[7];
+Switch[8];
+Klangs[9-11];
+Rocket[12-14];
+SlideSwitch[15];
+Bird[16];
+Alarm1[17];
+Alarm2[18];
+Electric[19];
+Thunder[20];
+Phones[21-24];
