@@ -1,0 +1,4 @@
+#N canvas 4 50 450 300 10;
+#X obj 148 64 r p\$1k\$2;
+#X obj 148 86 s \$3;
+#X connect 0 0 1 0;

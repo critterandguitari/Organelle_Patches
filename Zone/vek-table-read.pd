@@ -1,0 +1,16 @@
+#N canvas 506 590 680 351 10;
+#X text 388 34 arg1: main instance number;
+#X obj 124 167 soundfiler;
+#X obj 124 111 pack 0 \$1 \$2;
+#X obj 124 53 inlet;
+#X msg 124 138 read -resize waveforms/wave\$1.wav vek-\$2-wav\$3;
+#X obj 181 56 loadbang;
+#X obj 181 78 \$3;
+#X text 388 73 arg3: init # wave to load;
+#X text 389 53 arg2: table number;
+#X obj 356 178 table vek-\$1-wav\$2 1027;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
