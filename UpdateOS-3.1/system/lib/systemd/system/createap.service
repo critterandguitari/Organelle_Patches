@@ -1,0 +1,10 @@
+[Unit] 
+Description=Create AP Daemon
+
+[Service] 
+Type=simple 
+WorkingDirectory=/root/
+ExecStart=/root/scripts/start-ap.sh
+
+[Install] 
+WantedBy=multi-user.target

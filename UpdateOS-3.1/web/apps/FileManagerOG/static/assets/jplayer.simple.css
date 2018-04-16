@@ -1,0 +1,79 @@
+/*
+ * Skin for jPlayer Plugin (jQuery JavaScript Library)
+ * http://www.jplayer.org
+ *
+ * Skin Name: Blue Monday
+ *
+ * Copyright (c) 2010-2012 Happyworm Ltd
+ * Dual licensed under the MIT and GPL licenses.
+ *  - http://www.opensource.org/licenses/mit-license.php
+ *  - http://www.gnu.org/copyleft/gpl.html
+ *
+ * Author: Silvia Benvenuti
+ * Skin Version: 4.2 (jPlayer 2.2.0)
+ * Date: 22nd October 2012
+ */
+
+div.jp-audio{
+    padding-left: 8px;
+    display: inline-block;
+}
+
+div.jp-progress {
+	overflow:hidden;
+	background-color: #ddd;
+}
+div.jp-audio div.jp-progress {
+	height:9px;
+}
+div.jp-audio div.jp-type-single div.jp-progress {
+	left:0px;
+	width:200px;
+	margin-top:6px;
+}
+
+div.jp-seek-bar {
+	/*background: url("jplayer.blue.monday.jpg") 0 -202px repeat-x;*/
+	background-color: #ccc;
+	width:0px;
+	height:100%;
+	cursor: pointer;
+}
+div.jp-play-bar {
+	/*background: url("jplayer.blue.monday.jpg") 0 -218px repeat-x ;*/
+	background-color: #3392e3;
+	width:0px;
+	height:100%;
+}
+div.jp-duration {
+ float:left;
+
+}
+
+div.jp-current-time {
+    float:left;
+    margin-top:4px;
+    padding: 4px;
+}
+
+div .jp-pp {
+	float:left;
+	    margin-top: -5px;
+}
+div.jp-pp a {
+    padding-right:4px;
+
+}
+
+ul.jp-controls { 
+    float:left;
+    min-width:100px;
+}
+
+/* The seeking class is added/removed inside jPlayer */
+div.jp-seeking-bg {
+	background: url("jplayer.blue.monday.seeking.gif");
+}
+
+/* @end */
+
