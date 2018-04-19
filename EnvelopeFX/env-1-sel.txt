@@ -1,0 +1,9 @@
+Pass-Thru;
+Auto-Wah;
+LFO-Wah;
+Wah-D-Swell;
+Swell-Reverb;
+Tremolo;
+Distortion;
+Chorus;
+Flanger;

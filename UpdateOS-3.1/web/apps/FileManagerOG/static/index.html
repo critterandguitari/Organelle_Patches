@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Organelle Patches</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        
+        <link rel="stylesheet" href="./assets/bootstrap.min.css">
+        <script src="./assets/jquery.min.js"></script>
+        <script src="./assets/bootstrap.min.js"></script>
+
+		<!-- The container for the uploaded files -->
+		<script src="./assets/jquery.ui.widget.js"></script>
+		<!--script src="assets/jquery.iframe-transport.js"></script-->
+		<script src="./assets/jquery.fileupload.js"></script>
+		
+		<!-- The player -->
+        <link href="./assets/jplayer.simple.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="./assets/jquery.jplayer.js"></script>
+        
+        <!-- The overlay -->
+        <script type="text/javascript" src="./assets/loadingoverlay.js"></script>
+
+
+
+<style type="text/css">
+    body{
+    	margin: 20px;
+    }
+
+	.radio, .checkbox {
+    	margin-top: 0px; 
+    	margin-bottom: 0px; 
+	}
+	table {
+		cursor: pointer;
+	}
+    .fade {
+        opacity: 1;
+    }
+    .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+        margin-left: 0px; 
+    }
+    #control-panel {
+     /*   position:fixed;
+        background-color: #eeeeee;*/
+        margin-top: 1em;
+        margin-bottom: 1em;
+        white-space: nowrap;
+    }
+    #top-buts{
+        float:right;
+        font-size: 1.5em;
+        padding-top: .3em;
+    }
+    #files-table {
+    	padding: 6px;
+    	border: 1px solid #eee;
+    	border-radius: 4px;
+     	   
+    }
+    .pre-scrollable {
+            max-height: 1000px;
+    }
+    .dl-but{
+        padding-right: .7em;
+    }
+    .gspacer{
+        padding: .8em;
+    }
+    #dir-actions {
+        display: inline;
+        /*float: right;*/
+    }
+    .breadcrumb {
+        margin-top: 1em;
+    }
+    .upload-modal {
+        z-index: 19999;
+    }
+</style>
+		
+			<script type="text/javascript" src="./browser.js"></script>
+	</head>
+	<body>
+
+        <!-- Modal HTML -->
+        <div id="del-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Delete the following items?</p>
+                        <p class="text-warning"><small>This cannot be undone.</small></p>
+                        <p id="del-node-list"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="confirm-delete" type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="upload-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Uploading...</h4>
+                    </div>
+                    <div class="modal-body">
+						<!-- The global progress state -->
+						<div id="progress" class="fileupload-progress fade">
+							<!-- The global progress bar -->
+							<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								<div class="progress-bar progress-bar-success" style="width:0%;"></div>
+							</div>
+							<!-- The extended global progress state -->
+							<div class="progress-extended">&nbsp;</div>
+						</div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="unzip-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Uzip </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="unzip-modal-msg"></div>
+                    </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="confirm-unzip" type="button" class="btn btn-primary">Unzip</button>
+                    </div>
+                   <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div id="zip-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Zip</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="zip-modal-msg"></div>
+                    </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="confirm-zip" type="button" class="btn btn-primary">Zip</button>
+                    </div>
+                   <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div id="move-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Confirm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="move-modal-msg"></div>
+                    </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="confirm-move" type="button" class="btn btn-primary">Move</button>
+                    </div>
+                   <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div id="copy-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Confirm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="copy-modal-msg"></div>
+                    </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="confirm-copy" type="button" class="btn btn-primary">Paste</button>
+                    </div>
+                   <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ 
+        <div id="info-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Atención</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="info-modal-msg"></div>
+                    </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                   <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div id="new-folder-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">New Folder</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input id="new-folder-name" type="text" class="form-control" id="inputEmail" placeholder="Name">
+                    </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="confirm-new-folder" type="button" class="btn btn-primary">OK</button>
+                    </div>
+                   <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div id="rename-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Rename</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input id="rename-text" type="text" class="form-control" id="inputEmail" value="asdf">
+                    </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="confirm-rename" type="button" class="btn btn-primary">OK</button>
+                    </div>
+                   <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+       <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+		<div id="player">
+			<div id="jp_container_1" class="jp-audio">
+				<div class="jp-type-single">
+					<div class="jp-gui jp-interface">
+						<!--div class="jp-current-time"></div-->
+
+						<!--div class="jp-duration"></div-->
+						<div class="jp-pp">
+							<a href="javascript:;" class="jp-play" tabindex="1"><span class="glyphicon glyphicon-play"></span></a>
+							<a href="javascript:;" class="jp-pause" tabindex="1"><span class="glyphicon glyphicon-pause"></a>
+							</div>
+					
+							<div class="jp-progress">
+								<div class="jp-seek-bar">
+									<div class="jp-play-bar"></div>
+								</div>
+							</div>
+					
+						</div>
+						<div class="jp-title"></div>
+						<div class="jp-no-solution">
+							not supported
+						</div>
+					</div>
+				</div><!-- END SOUND PLAYER -->
+			</div>
+		</div>
+
+        <div id="control-panel">
+            <button id="sd-sel-but" type="button" class="btn btn-default">SD Card</button>
+            <button id="usb-sel-but" type="button" class="btn btn-default">USB Drive</button>
+            <div id="dir-actions">
+                &nbsp; 
+                &nbsp; 
+                &nbsp; 
+                <button id="cut-but" type="button" class="btn btn-default">Cut</button>
+                <button id="copy-but" type="button" class="btn btn-default">Copy</button>
+                <button id="paste-but" type="button" class="btn btn-default">Paste</button>
+                <button id="rename-but" type="button" class="btn btn-default">Rename</button>
+                <button id="zip-but" type="button" class="btn btn-default">Zip</button>
+                <button id="unzip-but" type="button" class="btn btn-default">Unzip</button>
+                <button id="delete-but" type="button" class="btn btn-danger">Delete</button>
+                &nbsp; 
+                &nbsp; 
+                &nbsp; 
+
+                <label class="btn btn-default btn-file">Upload<input id="fileupload" type="file" name="files[]" value="Upload" style="display: none;" multiple></label>
+                <button id="new-folder-but" type="button" class="btn btn-default">New Folder</button>
+                &nbsp; 
+                &nbsp;
+                <span id="top-buts"> 
+                    <a id="resync-but" href="#"><span class="glyphicon glyphicon-refresh"></span></a>
+                    <a id="flash-but" href="#"><span class="glyphicon glyphicon-flash"></span></a>
+                    <a id="home-but" href="/"><span class="glyphicon glyphicon-home"></span></a>
+                </span>
+            </div>
+            <br />
+            <ul class="breadcrumb" id="fsbreadcrumb"></ul>
+        </div>
+
+        <div id="files-table" class="pre-scrollable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-xs-1">Select</th>
+                        <th class="col-xs-8"><span class="gspacer"/>Name</th>
+                        <th class="col-xs-3">Size</th>
+                    </tr>
+                </thead>
+                <tbody id="ftable">
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

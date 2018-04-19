@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=SD Card
+Icon=/usr/share/icons/Adwaita/32x32/devices/drive-harddisk.png
+Exec=/usr/bin/pcmanfm
+Path=/sdcard
+Terminal=false
