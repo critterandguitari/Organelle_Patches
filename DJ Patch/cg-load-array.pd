@@ -1,0 +1,46 @@
+#N canvas 371 145 980 611 10;
+#X obj 126 350 soundfiler;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$1 211680 float 2;
+#X coords 0 1 211680 -1 200 140 1 0 0;
+#X restore 502 119 graph;
+#X obj 126 270 pack s s;
+#X obj 198 213 symbol \$1;
+#X text 9 11 arg 1: name of array for refencing with tabread~/tabread4~
+(example: array-1);
+#X obj 126 415 symbol \$1;
+#X msg 126 447 \; \$1 normalize;
+#X obj 126 382 b;
+#X text 165 381 convert this to a bang;
+#X text 197 414 recall arg1 (\$1);
+#X text 269 211 get name of array;
+#X text 222 452 this is a command to normalize the array (\$1);
+#X text 499 73 this is the array \, automatically named by the first
+argument (look in properties for this object);
+#X text 192 269 pack it together;
+#X text 317 305 compose the request for soundfiler;
+#X text 201 343 outputs length in samples when done loading \, we just
+want done loading bang so...;
+#X text 471 11 ***use this object with cg-looper***;
+#X obj 54 112 r \$1-repoint;
+#X msg 126 305 read -resize sounds/\$1 \$2;
+#X obj 54 136 t a a b, f 21;
+#X obj 15 80 r \$1-get-name;
+#X obj 15 188 s return-name;
+#X obj 15 102 b;
+#X obj 15 163 list;
+#X text 53 164 store filename for recalling;
+#X text 119 81 arg1-get-name and bang reutrns the name;
+#X connect 0 0 7 0;
+#X connect 2 0 18 0;
+#X connect 3 0 2 1;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X connect 17 0 19 0;
+#X connect 18 0 0 0;
+#X connect 19 0 23 1;
+#X connect 19 1 2 0;
+#X connect 19 2 3 0;
+#X connect 20 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
