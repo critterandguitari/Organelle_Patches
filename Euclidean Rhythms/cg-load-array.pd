@@ -1,0 +1,30 @@
+#N canvas 382 112 980 611 10;
+#X obj 126 350 soundfiler;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$1 11025 float 2;
+#X coords 0 1 11025 -1 200 140 1 0 0;
+#X restore 502 119 graph;
+#X obj 126 270 pack s s;
+#X obj 200 213 symbol \$1;
+#X text 9 11 arg 1: name of array for refencing with tabread~/tabread4~
+(example: array-1);
+#X text 271 211 get name of array;
+#X text 499 73 this is the array \, automatically named by the first
+argument (look in properties for this object);
+#X text 192 269 pack it together;
+#X text 317 305 compose the request for soundfiler;
+#X text 201 343 outputs length in samples when done loading \, we just
+want done loading bang so...;
+#X text 471 11 ***use this object with cg-looper***;
+#X msg 126 305 read -resize sounds/\$1 \$2;
+#X obj 126 178 t a b, f 11;
+#X obj 126 127 loadbang;
+#X obj 126 149 symbol \$2;
+#X text 9 51 arg 2: name of sound file.;
+#X connect 2 0 11 0;
+#X connect 3 0 2 1;
+#X connect 11 0 0 0;
+#X connect 12 0 2 0;
+#X connect 12 1 3 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
