@@ -1,0 +1,7 @@
+0 segmenty-seqq1 1 60 100;
+538.413 segmenty-seqq1 1 61 100;
+21.7687 segmenty-seqq1 1 60 0;
+532.608 segmenty-seqq1 1 62 100;
+23.22 segmenty-seqq1 1 61 0;
+448.435 segmenty-seqq1 -1 0;
+0 segmenty-seqq1 1 62 0;
