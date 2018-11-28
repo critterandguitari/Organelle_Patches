@@ -1,10 +1,11 @@
-#N canvas 563 50 826 447 10;
+#N canvas 567 50 826 447 10;
 #X text 393 24 Looper voices;
 #X text 390 45 argument 1: ms length to round up to (default 500ms).
 for best results set this number based on a 120bpm measure. for instance
 2000ms is one bar in 120bpm. so 500ms is rounding to a quarter note
 \, 1000 rounds to half etc...;
 #X obj 11 62 sample-voice 1.wav 0 \$1;
+#X obj 202 337 sample-voice 23.wav 22 \$1;
 #X obj 205 361 sample-voice 24.wav 23 \$1;
 #X obj 11 89 sample-voice 2.wav 1 \$1;
 #X obj 9 118 sample-voice 3.wav 2 \$1;
@@ -27,4 +28,3 @@ for best results set this number based on a 120bpm measure. for instance
 #X obj 203 256 sample-voice 20.wav 19 \$1;
 #X obj 204 282 sample-voice 21.wav 20 \$1;
 #X obj 201 307 sample-voice 22.wav 21 \$1;
-#X obj 202 337 sample-voice 23.wav 22 \$1;

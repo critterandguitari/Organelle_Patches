@@ -1,0 +1,10 @@
+#N canvas 907 387 450 300 10;
+#X obj 78 50 loadbang;
+#X obj 99 160 text define og-page-saver;
+#X msg 139 105 write page-saver.txt;
+#X msg 99 131 read page-saver.txt;
+#X obj 138 82 r saveState;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;

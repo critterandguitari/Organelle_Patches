@@ -1,5 +1,5 @@
-#N canvas 0 67 1440 762 10;
-#N canvas 309 22 758 799 menu5 1;
+#N canvas 7 55 1440 762 10;
+#N canvas 309 50 758 799 menu5 0;
 #X obj 247 362 f 0;
 #X obj 255 245 sel 0 1;
 #X obj 256 304 t b b;
