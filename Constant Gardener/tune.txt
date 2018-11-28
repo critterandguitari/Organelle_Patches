@@ -1,0 +1,13 @@
+Unison;
+Min 2nd;
+Maj 2nd;
+Min 3rd;
+Maj 3rd;
+4th;
+Aug 4th;
+5th;
+Min 6th;
+Maj 6th;
+Min 7th;
+Maj 7th;
+Oct;
