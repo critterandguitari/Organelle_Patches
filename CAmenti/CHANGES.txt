@@ -1,0 +1,7 @@
+10/19/18
+
+Added 10 ms of delay.
+Fixed the re-init of the sequence after changing pages.
+Made the reverb bigger and louder(dry/wet approach).
+added normalization to the recorded sample.
+Fixed MIDI out hung notes problem.
