@@ -1,0 +1,3 @@
+10/22/18
+
+Added an xtra bit of code and a comment explaining how to switch the default behavior to stop after recording a chunk. see 's reset-play'
