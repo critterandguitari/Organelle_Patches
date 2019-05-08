@@ -1,0 +1,32 @@
+#N canvas 55 346 733 577 10;
+#X obj 177 134 sel \$1;
+#X obj 209 327 s p\$1k\$2;
+#X obj 28 97 r knob\$2;
+#X obj 86 326 v p\$1k\$2;
+#X obj 209 214 v p\$1k\$2;
+#X obj 86 221 spigot 0;
+#X msg 139 190 1;
+#X obj 177 104 t f b, f 9;
+#X msg 106 190 0;
+#X obj 177 75 r knob-page-sel;
+#X obj 106 35 r disable-all-in;
+#X obj 86 267 t f f;
+#X text 275 105 if this is the selected page \, first recall the stored
+value then begin checking knob against the stored value \, when it
+passes through stored value disable the lock;
+#X obj 177 159 t b b;
+#X text 365 183 removed detent!!!;
+#X connect 0 0 13 0;
+#X connect 2 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 11 0;
+#X connect 6 0 5 1;
+#X connect 7 0 0 0;
+#X connect 7 1 8 0;
+#X connect 8 0 5 1;
+#X connect 9 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 3 0;
+#X connect 11 1 1 0;
+#X connect 13 0 6 0;
+#X connect 13 1 4 0;
