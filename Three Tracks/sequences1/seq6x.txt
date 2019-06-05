@@ -1,0 +1,17 @@
+0 length 1061;
+0 note 71 100;
+72 note 71 0;
+137 note 64 100;
+270 note 60 100;
+300 note 69 100;
+318 note 64 0;
+351 note 60 0;
+391 note 69 0;
+450 note 65 100;
+576 note 60 100;
+631 note 65 0;
+651 note 71 100;
+686 note 60 0;
+741 note 71 0;
+937 note 74 100;
+1023 note 74 0;

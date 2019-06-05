@@ -1,0 +1,5 @@
+10/23/18
+
+Voice tracker for volume control was an error, fixed.
+
+Sequencer Stopped shoes up at start and evertime you navigate from page 1.

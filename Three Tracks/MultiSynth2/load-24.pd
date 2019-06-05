@@ -1,0 +1,23 @@
+#N canvas 55 50 1014 499 10;
+#N canvas 4 50 450 278 (subpatch) 0;
+#X array \$2-\$1 88200 float 2;
+#X coords 0 1 88200 -1 335 251 1 0 0;
+#X restore 7 124 graph;
+#X obj 449 271 soundfiler;
+#X obj 449 36 loadbang;
+#X text 4 4 Arg1: construct the read message using the sound file name
+(\$1);
+#X text 4 34 Arg2: Module Shortname;
+#X text 4 54 Arg3: Module Instance Number;
+#X msg 449 187 read -resize Sounds/s24-sounds/\$1.wav \$2-\$1;
+#X obj 449 57 t b b;
+#X obj 487 88 symbol \$2;
+#X obj 449 89 f \$1;
+#X obj 449 119 pack 0 s, f 12;
+#X connect 2 0 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 9 0;
+#X connect 7 1 8 0;
+#X connect 8 0 10 1;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
