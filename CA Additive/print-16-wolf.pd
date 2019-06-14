@@ -38,6 +38,8 @@
 #X obj 218 499 list-split-print 15 \$1 \$2;
 #X obj 76 53 t b a, f 23;
 #X obj 75 75 del 5;
+#X obj 831 41 inlet mute;
+#X obj 831 62 s list-split-mute;
 #X connect 0 0 37 0;
 #X connect 1 0 2 0;
 #X connect 3 0 22 1;
@@ -75,3 +77,4 @@
 #X connect 37 0 38 0;
 #X connect 37 1 22 0;
 #X connect 38 0 19 0;
+#X connect 39 0 40 0;
