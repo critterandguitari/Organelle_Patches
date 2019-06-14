@@ -1,4 +1,4 @@
-#N canvas 458 207 809 639 10;
+#N canvas 211 93 809 639 10;
 #N canvas 390 60 1241 942 mapping 0;
 #X obj 240 537 map-knob-fx-fixed \$1 1 dclip bott -1;
 #X obj 240 557 map-knob-fx-fixed \$1 1 dclip top 1;
@@ -188,7 +188,7 @@
 #X text 182 280 textfile management;
 #X text 41 11 This is an effect module refrencing 13 effect modules.
 --modules inside modules--;
-#N canvas 282 165 464 395 load 1;
+#N canvas 283 162 464 395 load 0;
 #X obj 78 61 Chorus \$1;
 #X obj 78 81 Dclip \$1;
 #X obj 78 101 Delay \$1;
@@ -204,7 +204,7 @@
 #X obj 78 41 Bitcrusher \$1;
 #X obj 78 21 PassThru \$1;
 #X restore 76 111 pd load modules;
-#N canvas 414 120 485 507 select-fx 0;
+#N canvas 415 117 485 507 select-fx 0;
 #X obj 7 119 int;
 #X obj 87 276 s \$1-Fxs;
 #X obj 7 339 s fx13-\$1-knob1-label;
@@ -215,7 +215,6 @@
 #X obj 7 70 r \$1-knob1;
 #X obj 7 175 f;
 #X obj 71 366 s fx13-\$1-menu;
-#X obj 188 260 print \$1-recall;
 #X obj 7 275 symbol;
 #X obj 243 189 r page-ready;
 #X obj 243 218 bang;
@@ -223,17 +222,16 @@
 #X text 188 159 update label with new page;
 #X obj 7 92 * 14;
 #X connect 0 0 5 0;
-#X connect 3 0 11 0;
+#X connect 3 0 10 0;
 #X connect 3 0 9 0;
 #X connect 3 1 1 0;
 #X connect 4 0 2 0;
 #X connect 5 0 8 0;
 #X connect 6 0 3 0;
-#X connect 6 0 10 0;
-#X connect 7 0 16 0;
+#X connect 7 0 15 0;
 #X connect 8 0 6 0;
-#X connect 11 0 4 0;
-#X connect 12 0 13 0;
-#X connect 13 0 11 0;
-#X connect 16 0 0 0;
+#X connect 10 0 4 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 15 0 0 0;
 #X restore 80 250 pd select-fx;
