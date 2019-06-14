@@ -1,4 +1,4 @@
-#N canvas 139 50 1006 740 10;
+#N canvas 140 50 1006 740 10;
 #X obj 105 111 inlet;
 #X obj 435 151 inlet;
 #X text 101 86 trigger;
