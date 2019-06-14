@@ -1,4 +1,4 @@
-#N canvas 55 346 733 577 10;
+#N canvas 666 393 733 577 10;
 #X obj 177 134 sel \$1;
 #X obj 209 327 s p\$1k\$2;
 #X obj 28 97 r knob\$2;
@@ -15,11 +15,12 @@
 value then begin checking knob against the stored value \, when it
 passes through stored value disable the lock;
 #X obj 177 159 t b b;
-#X text 365 183 removed detent!!!;
+#X obj 86 242 f;
+#X obj 209 183 del 1;
 #X connect 0 0 13 0;
 #X connect 2 0 5 0;
 #X connect 4 0 1 0;
-#X connect 5 0 11 0;
+#X connect 5 0 14 0;
 #X connect 6 0 5 1;
 #X connect 7 0 0 0;
 #X connect 7 1 8 0;
@@ -29,4 +30,6 @@ passes through stored value disable the lock;
 #X connect 11 0 3 0;
 #X connect 11 1 1 0;
 #X connect 13 0 6 0;
-#X connect 13 1 4 0;
+#X connect 13 1 15 0;
+#X connect 14 0 11 0;
+#X connect 15 0 4 0;
