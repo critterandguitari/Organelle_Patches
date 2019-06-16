@@ -1,4 +1,4 @@
-#N canvas 138 82 1597 910 10;
+#N canvas 4 50 1009 708 10;
 #X obj 178 317 until;
 #X obj 178 349 f, f 5;
 #X obj 228 349 + 1;
@@ -47,21 +47,22 @@
 #X obj 117 112 t b;
 #X text 457 143 arg 5: name of array(array define);
 #X text 453 166 arg 6: number of points (2-128);
-#X obj 547 274 s \$0-size;
-#X obj 662 267 r \$0-size;
-#X obj 662 339 i;
+#X obj 618 278 s \$0-size;
+#X obj 664 319 r \$0-size;
+#X obj 635 362 i;
 #X obj 118 190 t b b b b, f 72;
-#X obj 662 318 / \$6;
+#X obj 635 341 / \$6;
 #X obj 136 465 / \$6;
 #X obj 178 283 f \$6;
 #X msg 224 295 0;
-#X msg 547 211 0;
-#X obj 548 249 tabread \$5-length;
+#X msg 618 215 0;
+#X obj 618 246 tabread \$5-length;
 #X msg 444 741 /oled/gClear 3 1;
 #X obj 178 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 205 445 tabread \$5;
 #X obj 591 463 tabread \$5;
+#X floatatom 719 283 5 0 0 0 - - -, f 5;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 6 0;
@@ -122,6 +123,7 @@
 #X connect 55 0 1 1;
 #X connect 56 0 57 0;
 #X connect 57 0 48 0;
+#X connect 57 0 62 0;
 #X connect 58 0 31 0;
 #X connect 59 0 51 0;
 #X connect 60 0 4 0;

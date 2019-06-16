@@ -1,4 +1,4 @@
-#N canvas 626 164 1290 712 10;
+#N canvas 4 50 1009 712 10;
 #X obj 73 89 inlet aux;
 #N canvas 9 50 1163 752 print-grid 0;
 #X obj 606 425 s oscOut;
