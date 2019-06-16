@@ -70,7 +70,7 @@ screenLine3 3: Tone \; screenLine4 4: Decay \; screenLine5 Aux: Drop!
 #X obj 600 179 voice;
 #X obj 652 179 voice;
 #X obj 704 179 voice;
-#X obj 568 299 *~ 0.3;
+#X obj 568 299 *~ 0.2;
 #X connect 0 0 56 0;
 #X connect 1 0 4 0;
 #X connect 1 1 10 0;
