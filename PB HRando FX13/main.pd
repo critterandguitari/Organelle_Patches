@@ -8,7 +8,7 @@
 #X obj 75 120 t b b;
 #X obj 41 50 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#N canvas 351 166 1052 613 mapping 1;
+#N canvas 351 166 1052 613 mapping 0;
 #X obj 356 500 throw~ outL;
 #X obj 471 499 throw~ outR;
 #X text 362 70 MIDI (keys) Routing;
