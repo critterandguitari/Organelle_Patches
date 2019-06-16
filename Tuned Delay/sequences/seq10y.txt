@@ -1,0 +1,15 @@
+0 length 704;
+0 note 60 100;
+89 note 69 100;
+134 note 60 0;
+179 note 69 0;
+194 note 72 100;
+269 note 74 100;
+269 note 72 0;
+359 note 74 0;
+359 note 76 100;
+449 note 74 100;
+479 note 76 0;
+554 note 72 100;
+569 note 74 0;
+674 note 72 0;
