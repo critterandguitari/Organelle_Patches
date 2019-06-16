@@ -45,12 +45,12 @@
 #X text 328 47 length;
 #X text 689 41 speed;
 #X obj 255 15 unpack;
-#X obj 299 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 299 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 299 214 ==;
 #X obj 294 626 spigot 1;
 #X obj 680 252 moses 10;
-#X obj 287 712 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 287 712 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 240 804 s is-playing;
 #N canvas 1232 509 450 297 switch 0;
@@ -92,7 +92,7 @@
 #X msg 120 511 0;
 #X msg 157 513 1;
 #X obj 204 335 f;
-#X obj 242 273 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 242 273 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 143 257 t a a;
 #X obj 204 134 f;
@@ -904,7 +904,7 @@ end the rec and play the loop;
 #X obj 984 454 r cgSc-1-mute-print;
 #X obj 939 495 spigot 0;
 #X obj 984 475 ==;
-#X obj 343 788 *~ 0.3;
+#X obj 343 788 *~ 0.35;
 #X connect 2 0 3 0;
 #X connect 3 0 36 0;
 #X connect 3 1 39 0;
