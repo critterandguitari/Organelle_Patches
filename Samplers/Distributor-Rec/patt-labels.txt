@@ -1,0 +1,10 @@
+None;
+Up2;
+Down2;
+Up3;
+Down3;
+Up-Down2;
+Up-Down3;
+Double-Randoms;
+Double-Double;
+All;
