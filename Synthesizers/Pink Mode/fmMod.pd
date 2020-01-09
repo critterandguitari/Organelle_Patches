@@ -1,0 +1,22 @@
+#N canvas 383 557 1031 709 10;
+#X obj 62 300 *~, f 55;
+#X obj 63 405 outlet~;
+#X text 101 468 Basic Oscillator that can easily be phase modulated.
+;
+#X obj 19 33 inlet~ Phase-Mod;
+#X obj 126 34 inlet~ Base Frequency;
+#X obj 263 34 inlet~ Modulation;
+#X obj 391 38 inlet~ amp;
+#X obj 77 169 phasor~;
+#X obj 62 192 +~;
+#X obj 62 213 cos~;
+#X obj 77 138 *~, f 16;
+#X connect 0 0 1 0;
+#X connect 3 0 8 0;
+#X connect 4 0 10 1;
+#X connect 5 0 10 0;
+#X connect 6 0 0 1;
+#X connect 7 0 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 10 0 7 0;
