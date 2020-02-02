@@ -1,4 +1,4 @@
-#N canvas 383 557 1031 709 10;
+#N canvas 383 335 1031 709 10;
 #X obj 62 300 *~, f 55;
 #X obj 63 405 outlet~;
 #X text 101 468 Basic Oscillator that can easily be phase modulated.

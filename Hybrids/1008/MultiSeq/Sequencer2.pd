@@ -1,5 +1,5 @@
 #N canvas 85 89 895 512 10;
-#N canvas 7 50 1647 847 seq2 1;
+#N canvas -381 152 1647 847 seq2 0;
 #X obj 860 408 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 860 508 qlist;
@@ -24,7 +24,7 @@
 #X obj 1363 333 + 1;
 #X obj 1222 302 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 1265 373 5 0 0 0 - - -, f 5;
+#X floatatom 1265 373 5 0 0 0 - - -;
 #X obj 1283 264 sel 1;
 #X msg 1283 289 0;
 #X obj 1265 408 sel 0;
@@ -32,7 +32,7 @@
 #X obj 1047 223 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 1047 248 0 0;
-#X floatatom 123 387 5 0 0 0 - - -, f 5;
+#X floatatom 123 387 5 0 0 0 - - -;
 #X obj 123 418 sel 1;
 #X obj 123 444 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;

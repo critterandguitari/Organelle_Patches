@@ -3,6 +3,6 @@ Arper arper;
 Genny genny;
 ChordRoll croll;
 NoteRepeat nr;
-Sequncer2 seq2;
+Sequencer3 seq3;
 Punchy punchy;
-PPBeats pb;
+PPBeats ppb;
