@@ -1,0 +1,23 @@
+#N canvas 369 79 672 687 10;
+#X text 20 30 Arg1: name of pd window to place paths;
+#X text 20 50 Arg2: file path to library;
+#X obj 208 133 loadbang;
+#X obj 208 194 symbol \$1;
+#X obj 295 192 symbol \$2;
+#X obj 208 154 t b b, f 12;
+#X obj 208 215 pack s s, f 15;
+#X obj 208 236 t l l;
+#X msg 235 270 \; pd-\$1 clear;
+#X msg 208 327 \; pd-\$1 obj 50 50 declare -path \$2/sequencer \; pd-\$1
+obj 50 100 declare -path \$2/metronome \; pd-\$1 obj 50 150 declare
+-path \$2/sampling \; pd-\$1 obj 50 200 declare -path \$2/externals
+;
+#X text 334 9 this object allows for easy pointing to a library;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 7 1 8 0;
