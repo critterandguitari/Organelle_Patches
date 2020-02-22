@@ -1,4 +1,4 @@
-#N canvas 484 177 925 689 10;
+#N canvas 385 161 925 689 10;
 #X obj 231 246 deterior CG-Pd-Library-Local Sounds;
 #X text 459 236 <-- 1st argument is Path to CG-Library;
 #X text 274 51 Deterior Patch for Organelle;
