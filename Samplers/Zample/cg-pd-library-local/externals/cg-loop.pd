@@ -1,0 +1,34 @@
+#N canvas 638 210 951 473 10;
+#X obj 33 132 inlet bang;
+#X text 150 6 loop abstraction for metronome/ticks;
+#X text 145 25 this approach avoids the modulo % in theory avoiding
+a number that gits bigger and bigger overtime;
+#X obj 306 152 inlet reset-for-next-bang;
+#X obj 122 152 inlet set-with-output;
+#X obj 33 387 outlet;
+#X obj 33 153 t b;
+#X obj 106 291 t b;
+#X msg 106 312 0;
+#X obj 61 349 f;
+#X text 149 71 Arg1: loop size integer \, output is 0 - (size - 1)
+;
+#X obj 61 268 moses \$1;
+#X obj 33 218 i 0, f 46;
+#X text 154 94 Arg2: step size;
+#X obj 61 247 + \$2;
+#X obj 646 146 inlet change-step;
+#X obj 520 139 inlet change-loop;
+#X connect 0 0 6 0;
+#X connect 3 0 12 1;
+#X connect 4 0 12 0;
+#X connect 6 0 12 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 1;
+#X connect 11 0 9 0;
+#X connect 11 1 7 0;
+#X connect 12 0 5 0;
+#X connect 12 0 14 0;
+#X connect 14 0 11 0;
+#X connect 15 0 14 1;
+#X connect 16 0 11 1;

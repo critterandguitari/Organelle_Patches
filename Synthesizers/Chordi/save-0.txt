@@ -1,0 +1,14 @@
+dummy 1;
+length 2.95;
+note 1 60 100;
+note-off 1.17 60 0;
+note 1.28 67 100;
+note-off 1.58 67 0;
+note 1.6 71 100;
+note-off 1.92 71 0;
+note 1.94 77 100;
+note-off 2.25 77 0;
+note 2.29 60 100;
+note-off 2.52 60 0;
+note 2.62 65 100;
+note-off 2.82 65 0;

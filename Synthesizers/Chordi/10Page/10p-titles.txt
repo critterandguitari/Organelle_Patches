@@ -1,0 +1,9 @@
+Chord-1;
+Chord-2;
+Chord-3;
+Chord-4;
+Delay;
+Rec;
+Samp-Sett;
+Loop-Sett;
+Filter;
