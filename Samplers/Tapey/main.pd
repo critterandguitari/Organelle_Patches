@@ -1,4 +1,4 @@
-#N canvas 572 226 892 525 10;
+#N canvas 50 83 886 525 10;
 #X declare -path cg-pdlib-local/externals;
 #X declare -path cg-pdlib-local/metronome;
 #X declare -path cg-pdlib-local/sequencer;
@@ -108,7 +108,7 @@
 #X connect 10 0 11 1;
 #X restore 440 9 pd slot-saver-1;
 #X obj 23 77 shortcut 1 1, f 20;
-#N canvas 100 74 1124 789 seq3-5option-control 0;
+#N canvas 100 50 1124 682 seq3-5option-control 0;
 #X obj 139 278 outlet;
 #X obj 65 121 t b;
 #X msg 65 143 2;
@@ -330,7 +330,7 @@ end the rec and play the loop;
 #X obj 719 292 throw~ outL;
 #X obj 735 270 throw~ outR;
 #X obj 718 242 *~ 0.9;
-#N canvas 4 50 958 670 sound-in 0;
+#N canvas 4 62 958 670 sound-in 0;
 #X obj 225 87 r~ inL;
 #X obj 296 87 r~ inR;
 #X obj 296 108 *~ 0.707;
@@ -546,7 +546,7 @@ end the rec and play the loop;
 #X obj 615 486 loadbang;
 #X msg 615 507 0;
 #X obj 562 110 f 0;
-#N canvas 4 50 1161 954 new 0;
+#N canvas 4 50 1161 682 new 0;
 #X obj 364 668 throw~ outL;
 #X obj 381 643 throw~ outR;
 #X obj 363 604 *~, f 34;
@@ -578,7 +578,7 @@ end the rec and play the loop;
 #X connect 10 0 3 1;
 #X connect 11 0 3 1;
 #X restore 705 391 pd aux press cancels rec;
-#N canvas 347 68 1256 793 shortcut-6 0;
+#N canvas 106 50 1256 682 shortcut-6 0;
 #X obj 261 161 r samp-states;
 #X obj 261 186 route 1;
 #X obj 352 117 s samp-1-arm;
@@ -695,8 +695,6 @@ end the rec and play the loop;
 #X connect 53 0 51 0;
 #X connect 54 0 34 0;
 #X restore 705 360 pd shortcut-6 and the printing;
-#X obj 704 320 clone -s 1 load-rec-sample 1 samp 10000 sounds 1, f
-28;
 #X obj 170 214 sel 0;
 #X obj 197 240 t b;
 #X obj 233 283 + 1;
@@ -715,27 +713,29 @@ end the rec and play the loop;
 #X obj 565 565 r~ internal-monitor;
 #X obj 197 488 s cgSc-1-10label;
 #X obj 171 192 r cgSc-1-10;
+#X obj 704 320 clone -s 1 load-rec-sample 1 samp 30000 sounds 1, f
+28;
 #X connect 2 0 1 0;
 #X connect 2 0 0 0;
-#X connect 7 1 8 0;
+#X connect 6 1 7 0;
+#X connect 7 0 9 0;
 #X connect 8 0 10 0;
-#X connect 9 0 11 0;
-#X connect 10 0 9 0;
-#X connect 10 0 14 0;
-#X connect 11 0 10 1;
-#X connect 12 0 15 0;
-#X connect 12 1 16 0;
-#X connect 13 0 17 0;
-#X connect 14 0 12 0;
-#X connect 14 1 18 0;
-#X connect 15 0 23 0;
-#X connect 16 0 23 0;
-#X connect 17 0 10 0;
-#X connect 18 0 2 0;
-#X connect 20 0 6 0;
-#X connect 21 0 6 1;
-#X connect 22 0 2 1;
-#X connect 24 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 1;
+#X connect 11 0 14 0;
+#X connect 11 1 15 0;
+#X connect 12 0 16 0;
+#X connect 13 0 11 0;
+#X connect 13 1 17 0;
+#X connect 14 0 22 0;
+#X connect 15 0 22 0;
+#X connect 16 0 9 0;
+#X connect 17 0 2 0;
+#X connect 19 0 24 0;
+#X connect 20 0 24 1;
+#X connect 21 0 2 1;
+#X connect 23 0 6 0;
 #X restore 86 108 pd new record-sample;
 #X obj 535 43 r cgSc-1-8;
 #X obj 611 272 s cgSc-1-8label;
@@ -782,9 +782,11 @@ end the rec and play the loop;
 #X obj 198 162 r new-recording!;
 #X obj 206 270 array define -k tape-lOOps 128;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.119386
+0 0.306121 0.148637 0.0769245 0.0413782 0 0.149108 0 0.328854 0.154174
+0.240757 0.0523497 0.317304 0.121054 0.949397 0 0 0 0.615667 0 0 0
+0.726475 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X connect 0 0 3 0;
 #X connect 2 0 0 0;
 #X restore 305 94 pd emulate 127 tape loops;

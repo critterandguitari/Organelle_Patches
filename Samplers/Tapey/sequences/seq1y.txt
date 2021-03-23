@@ -1,5 +1,13 @@
-0 length 276;
-0 note 62 100;
-53 note 62 0;
-105 note 62 100;
-158 note 62 0;
+0 length 2207;
+0 note 69 100;
+231 note 69 0;
+333 note 69 100;
+597 note 69 0;
+693 note 64 100;
+985 note 64 0;
+1083 note 67 100;
+1346 note 67 0;
+1440 note 62 100;
+1768 note 62 0;
+1833 note 65 100;
+2114 note 65 0;
