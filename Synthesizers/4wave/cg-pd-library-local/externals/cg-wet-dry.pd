@@ -1,0 +1,28 @@
+#N canvas 4 50 700 456 10;
+#X obj 28 23 inlet~;
+#X obj 138 23 inlet~;
+#X obj 254 21 inlet;
+#X obj 28 205 *~;
+#X obj 92 66 pow 2;
+#X msg 43 120 1 \$1;
+#X obj 43 141 -;
+#X obj 138 207 *~;
+#X obj 92 87 t a a;
+#X obj 28 236 outlet~;
+#X obj 138 238 outlet~;
+#X obj 43 162 lop~ \$1;
+#X obj 153 160 lop~ \$1;
+#X text 260 92 Arg:1 = speed of curve 1(very slow) - 1000ish(very fast)
+;
+#X connect 0 0 3 0;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 3 0 9 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 5 0;
+#X connect 8 1 12 0;
+#X connect 11 0 3 1;
+#X connect 12 0 7 1;

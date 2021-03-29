@@ -1,0 +1,119 @@
+0 length 1706 \; 0 note 60 100 \; 195 note 60 0 \; 233 note 67 100
+\; 282 note 67 0 \; 336 note 67 100 \; 424 note 67 0 \; 441 note 62
+100 \; 560 note 62 0 \; 680 note 67 100 \; 705 note 67 0 \; 759 note
+67 100 \; 830 note 67 0 \; 872 note 64 100 \; 987 note 64 0 \; 1077
+note 67 100 \; 1099 note 67 0 \; 1160 note 67 100 \; 1213 note 67 0
+\; 1302 note 64 100 \; 1309 note 65 100 \; 1398 note 65 0 \; 1476 note
+64 0 \; 1509 note 69 100 \; 1534 note 69 0 \; 1593 note 69 100 \; 1664
+note 69 0 \;;
+0 length 1706 \; 0 note 60 100 \; 195 note 60 0 \; 233 note 67 100
+\; 282 note 67 0 \; 336 note 67 100 \; 424 note 67 0 \; 441 note 62
+100 \; 560 note 62 0 \; 680 note 67 100 \; 705 note 67 0 \; 759 note
+67 100 \; 830 note 67 0 \; 872 note 64 100 \; 987 note 64 0 \; 1077
+note 67 100 \; 1099 note 67 0 \; 1160 note 67 100 \; 1213 note 67 0
+\; 1302 note 64 100 \; 1309 note 65 100 \; 1398 note 65 0 \; 1476 note
+64 0 \; 1509 note 69 100 \; 1534 note 69 0 \; 1593 note 69 100 \; 1664
+note 69 0 \;;
+3;
+0 length 2027 \; 0 note 67 100 \; 225 note 67 0 \; 332 note 69 100
+\; 412 note 69 0 \; 439 note 72 100 \; 656 note 69 100 \; 666 note
+72 0 \; 691 note 67 100 \; 697 note 69 0 \; 786 note 67 0 \; 803 note
+64 100 \; 1107 note 65 100 \; 1110 note 64 0 \; 1147 note 65 0 \; 1209
+note 65 100 \; 1251 note 65 0 \; 1301 note 65 100 \; 1362 note 65 0
+\; 1416 note 64 100 \; 1675 note 64 0 \; 1686 note 66 100 \; 1717 note
+66 0 \; 1783 note 66 100 \; 1834 note 66 0 \; 1879 note 66 100 \; 1946
+note 66 0 \;;
+0 length 942 \; 0 note 72 100 \; 112 note 69 100 \; 121 note 72 0 \;
+170 note 69 0 \; 221 note 64 100 \; 333 note 60 100 \; 364 note 64
+0 \; 446 note 64 100 \; 485 note 60 0 \; 523 note 64 0 \; 561 note
+67 100 \; 677 note 67 0 \; 678 note 68 100 \; 800 note 68 0 \; 809
+note 69 100 \; 934 note 69 0 \;;
+6;
+0 length 870 \; 0 note 71 100 \; 96 note 69 100 \; 103 note 71 0 \;
+152 note 69 0 \; 191 note 64 100 \; 291 note 64 0 \; 307 note 60 100
+\; 400 note 67 100 \; 403 note 60 0 \; 441 note 67 0 \; 507 note 64
+100 \; 586 note 64 0 \; 710 note 76 100 \; 755 note 76 0 \;;
+0 length 870 \; 0 note 71 100 \; 96 note 69 100 \; 103 note 71 0 \;
+152 note 69 0 \; 191 note 64 100 \; 291 note 64 0 \; 307 note 60 100
+\; 400 note 67 100 \; 403 note 60 0 \; 441 note 67 0 \; 507 note 64
+100 \; 586 note 64 0 \; 710 note 76 100 \; 755 note 76 0 \;;
+9;
+0 length 3677 \; 0 note 69 100 \; 492 note 69 0 \; 664 note 71 100
+\; 986 note 68 100 \; 1445 note 68 0 \; 1525 note 66 100 \; 3489 note
+66 0 \; 3498 note 71 0 \;;
+0 length 552 \; 0 note 74 100 \; 60 note 74 0 \; 149 note 64 100 \;
+248 note 60 100 \; 259 note 64 0 \; 348 note 60 0 \; 378 note 72 100
+\; 438 note 76 100 \; 447 note 72 0 \; 500 note 76 0 \;;
+12;
+0 length 509 \; 0 note 77 100 \; 19 note 71 100 \; 47 note 77 0 \;
+112 note 71 0 \; 119 note 65 100 \; 200 note 64 100 \; 226 note 65
+0 \; 251 note 60 100 \; 305 note 65 100 \; 317 note 64 0 \; 326 note
+77 100 \; 335 note 60 0 \; 368 note 74 100 \; 382 note 65 0 \; 386
+note 71 100 \; 488 note 74 0 \; 499 note 77 0 \; 501 note 71 0 \;;
+14;
+0 length 2632 \; 0 note 72 100 \; 23 note 72 0 \; 335 note 72 100 \;
+366 note 72 0 \; 516 note 65 100 \; 603 note 65 0 \; 811 note 65 100
+\; 970 note 65 0 \; 1129 note 65 100 \; 1228 note 65 0 \; 1329 note
+72 100 \; 1381 note 72 0 \; 1637 note 72 100 \; 1727 note 72 0 \; 1821
+note 67 100 \; 1914 note 67 0 \; 2136 note 67 100 \; 2283 note 67 0
+\; 2460 note 67 100 \; 2535 note 67 0 \;;
+0 length 2547 \; 0 note 72 100 \; 46 note 72 0 \; 138 note 67 100 \;
+223 note 67 0 \; 285 note 60 100 \; 392 note 60 0 \; 440 note 72 100
+\; 482 note 72 0 \; 618 note 67 100 \; 737 note 67 0 \; 780 note 60
+100 \; 864 note 60 0 \; 940 note 72 100 \; 974 note 72 0 \; 1123 note
+67 100 \; 1197 note 67 0 \; 1286 note 74 100 \; 1320 note 74 0 \; 1439
+note 74 100 \; 1471 note 74 0 \; 1626 note 74 100 \; 1671 note 74 0
+\; 1798 note 76 100 \; 1850 note 76 0 \; 1966 note 77 100 \; 2052 note
+77 0 \;;
+0 length 662 \; 0 note 74 100 \; 55 note 74 0 \; 146 note 60 100 \;
+238 note 60 0 \; 249 note 72 100 \; 289 note 72 0 \; 327 note 64 100
+\; 423 note 60 100 \; 436 note 64 0 \; 499 note 74 100 \; 503 note
+60 0 \; 542 note 74 0 \;;
+0 length 1039 \; 0 note 62 100 \; 63 note 62 0 \; 113 note 62 100 \;
+157 note 62 0 \; 225 note 62 100 \; 257 note 62 0 \; 335 note 62 100
+\; 348 note 62 0 \; 419 note 62 100 \; 441 note 62 0 \; 508 note 62
+100 \; 556 note 62 0 \; 612 note 62 100 \; 644 note 62 0 \; 698 note
+62 100 \; 741 note 62 0 \; 801 note 62 100 \; 838 note 62 0 \; 905
+note 62 100 \; 920 note 62 0 \; 961 note 62 100 \; 1022 note 62 0 \;
+;
+0 length 891 \; 0 note 76 100 \; 48 note 76 0 \; 109 note 60 100 \;
+199 note 64 100 \; 238 note 60 0 \; 293 note 64 0 \; 319 note 74 100
+\; 377 note 74 0 \; 380 note 64 100 \; 476 note 60 100 \; 500 note
+64 0 \; 578 note 72 100 \; 582 note 60 0 \; 626 note 72 0 \; 659 note
+64 100 \; 716 note 60 100 \; 763 note 64 0 \; 800 note 74 100 \; 809
+note 60 0 \; 849 note 74 0 \;;
+20;
+0 length 1500 \; 0 note 72 100 \; 119 note 72 0 \; 127 note 69 100
+\; 145 note 69 0 \; 180 note 64 100 \; 269 note 60 100 \; 270 note
+64 0 \; 364 note 64 100 \; 393 note 60 0 \; 407 note 69 100 \; 416
+note 64 0 \; 463 note 69 0 \; 691 note 71 100 \; 742 note 71 0 \; 799
+note 71 100 \; 838 note 71 0 \; 910 note 62 100 \; 978 note 62 0 \;
+1000 note 69 100 \; 1035 note 69 0 \; 1160 note 60 100 \; 1300 note
+62 100 \; 1319 note 60 0 \; 1356 note 62 0 \; 1389 note 69 100 \; 1443
+note 69 0 \;;
+0 length 455 \; 0 note 77 100 \; 32 note 77 0 \; 104 note 77 100 \;
+140 note 77 0 \; 185 note 60 100 \; 254 note 64 100 \; 278 note 60
+0 \; 338 note 64 0 \; 346 note 74 100 \; 377 note 74 0 \;;
+23;
+0 length 3001 \; 0 note 72 100 \; 2 note 67 100 \; 4 note 70 100 \;
+439 note 67 0 \; 442 note 72 0 \; 458 note 70 0 \; 1013 note 65 100
+\; 1016 note 68 100 \; 1017 note 71 100 \; 1381 note 65 0 \; 1387 note
+71 0 \; 1408 note 68 0 \; 1901 note 64 100 \; 1902 note 66 100 \; 1902
+note 69 100 \; 2279 note 64 0 \; 2307 note 66 0 \; 2324 note 69 0 \;
+2677 note 82 100 \; 2730 note 82 0 \; 2804 note 82 100 \; 2865 note
+82 0 \;;
+0 length 546 \; 0 note 81 100 \; 47 note 81 0 \; 87 note 62 100 \;
+169 note 77 100 \; 177 note 62 0 \; 189 note 77 0 \; 289 note 60 100
+\; 297 note 77 100 \; 317 note 77 0 \; 397 note 64 100 \; 398 note
+79 100 \; 411 note 64 0 \; 414 note 60 0 \; 490 note 79 0 \;;
+26;
+0 length 730 \; 0 note 81 100 \; 76 note 77 100 \; 128 note 81 0 \;
+162 note 74 100 \; 176 note 77 0 \; 215 note 74 0 \; 232 note 64 100
+\; 310 note 60 100 \; 328 note 64 0 \; 360 note 65 100 \; 405 note
+60 0 \; 405 note 72 100 \; 440 note 65 0 \; 453 note 76 100 \; 459
+note 72 0 \; 529 note 77 100 \; 540 note 76 0 \; 561 note 72 100 \;
+596 note 77 0 \; 608 note 72 0 \;;
+0 length 740 \; 0 note 81 100 \; 77 note 77 100 \; 129 note 81 0 \;
+163 note 74 100 \; 177 note 77 0 \; 216 note 74 0 \; 233 note 64 100
+\; 311 note 60 100 \; 329 note 64 0 \; 406 note 60 0 \; 406 note 72
+100 \; 460 note 72 0 \; 562 note 72 100 \; 609 note 72 0 \;;
