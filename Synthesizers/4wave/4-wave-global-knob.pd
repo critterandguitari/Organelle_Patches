@@ -35,6 +35,7 @@
 #X obj 290 448 * 100;
 #X obj 290 469 i;
 #X obj 412 529 i;
+#X obj 290 490 change -1;
 #X connect 0 0 29 0;
 #X connect 1 0 0 0;
 #X connect 1 1 21 0;
@@ -74,5 +75,6 @@
 #X connect 30 0 18 0;
 #X connect 31 0 32 0;
 #X connect 33 0 34 0;
-#X connect 34 0 28 0;
+#X connect 34 0 36 0;
 #X connect 35 0 28 1;
+#X connect 36 0 28 0;
