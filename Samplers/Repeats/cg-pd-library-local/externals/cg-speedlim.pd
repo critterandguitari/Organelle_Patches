@@ -1,0 +1,49 @@
+#N canvas 384 50 782 581 10;
+#X obj 50 77 inlet;
+#X msg 171 228 0;
+#X msg 50 226 1;
+#X obj 50 346 list append, f 37;
+#X obj 50 393 outlet;
+#X obj 50 204 spigot 1;
+#X obj 171 275 == 0;
+#X obj 50 101 t a b a, f 41;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 502 19 pd LICENSE-GPL;
+#X obj 171 196 delay \$1;
+#X obj 50 307 metro \$1;
+#X obj 359 58 inlet;
+#X obj 359 79 s \$0-change-time;
+#X obj 216 164 r \$0-change-time;
+#X obj 119 299 r \$0-change-time;
+#X text 233 196 if no activity for Arg 1 msec \, then bang outlet;
+#X text 525 103 Arg 1: amount of time in ms;
+#X connect 0 0 7 0;
+#X connect 1 0 6 0;
+#X connect 1 0 10 0;
+#X connect 2 0 6 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 0;
+#X connect 7 1 9 0;
+#X connect 7 2 3 1;
+#X connect 9 0 1 0;
+#X connect 10 0 3 0;
+#X connect 11 0 12 0;
+#X connect 13 0 9 1;
+#X connect 14 0 10 1;

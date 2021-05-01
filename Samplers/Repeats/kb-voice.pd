@@ -1,0 +1,13 @@
+#N canvas 1037 340 450 300 10;
+#X obj 39 13 inlet;
+#X text 81 12 notes in;
+#X obj 156 181 f \$1;
+#X obj 39 254 outlet;
+#X obj 39 101 cg-short-long-b 1000;
+#X obj 156 214 s kb-notes-say-edit;
+#X msg 39 122 100;
+#X connect 0 0 4 0;
+#X connect 2 0 5 0;
+#X connect 4 0 6 0;
+#X connect 4 1 2 0;
+#X connect 6 0 3 0;

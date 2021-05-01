@@ -1,0 +1,10 @@
+Whole 1;
+Half 2;
+Third 3;
+Quarter 4;
+Triplet 6;
+Eigth 8;
+12th 12;
+16th 16;
+24th 24;
+32nd 32;
