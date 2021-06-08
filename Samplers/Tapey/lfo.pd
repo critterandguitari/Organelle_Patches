@@ -19,7 +19,7 @@
 #X obj 294 94 lop~ 100;
 #X obj 95 137 * 0.005;
 #X obj 294 73 * 0.15;
-#N canvas 4 50 450 300 warble 0;
+#N canvas 4 50 450 300 warble 1;
 #X obj 37 25 inlet~;
 #X obj 38 268 outlet~;
 #X obj 168 103 random 1000;

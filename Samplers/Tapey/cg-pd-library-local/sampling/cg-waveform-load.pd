@@ -1,0 +1,18 @@
+#N canvas 506 590 680 351 10;
+#X obj 124 207 soundfiler;
+#X obj 124 53 inlet;
+#X text 388 54 arg1: clone's instance number;
+#X text 389 84 arg2: name of waveform bank;
+#X obj 430 181 table \$2-\$1 1027;
+#X obj 124 74 symbol;
+#X msg 124 178 read -resize \$1 \$2-\$3;
+#X obj 124 95 t a b;
+#X obj 124 151 pack s s \$1;
+#X obj 155 124 symbol \$2;
+#X connect 1 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 1;
