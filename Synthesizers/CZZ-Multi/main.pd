@@ -1,7 +1,6 @@
 #N canvas 388 98 879 455 10;
 #X declare -path patchmenu;
 #X declare -path CZZ-OG;
-#X declare -path .;
 #X declare -path Sequencer2;
 #X obj 75 19 declare -path patchmenu;
 #X obj 75 230 patchmenu;
@@ -46,7 +45,7 @@
 #X text 272 61 Page 2 - Width Env.;
 #X obj 275 231 map-knob 4 1 czz-1-trans;
 #X obj 274 253 map-knob 4 2 czz-1-pw1;
-#X floatatom 755 216 5 0 0 0 - - -, f 5;
+#X floatatom 755 216 5 0 0 0 - - -;
 #X obj 689 223 hip~ 200;
 #X obj 870 93 r seq2-1-aux-label;
 #X obj 870 115 s screenLine5;

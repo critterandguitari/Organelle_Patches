@@ -1,4 +1,4 @@
-#N canvas 46 59 1766 927 10;
+#N canvas 4 50 1440 851 10;
 #X obj 321 69 inlet start/stop;
 #X obj 321 91 s \$0-strtStop;
 #X text 38 307 Arg 1: internal bpm on or off;
@@ -41,7 +41,7 @@ display purposes.;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
 #X restore 889 732 pd mstobpm;
-#X obj 935 784 r midi-clock-present;
+#X obj 934 784 r midi-clock-present;
 #X obj 889 812 spigot 0;
 #N canvas 465 318 729 612 average-bpm 0;
 #X obj 98 20 inlet;

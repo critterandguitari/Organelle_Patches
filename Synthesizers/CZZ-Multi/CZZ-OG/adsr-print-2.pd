@@ -1,4 +1,4 @@
-#N canvas 100 50 1125 816 10;
+#N canvas 100 50 1125 896 10;
 #X obj 308 204 * 0.0033333;
 #X obj 308 226 * 32;
 #X obj 308 248 i;
@@ -20,7 +20,7 @@
 #X obj 448 136 inlet;
 #X obj 641 142 inlet;
 #X obj 829 143 inlet;
-#X obj 430 783 s oscOut, f 9;
+#X obj 455 799 s oscOut, f 9;
 #X obj 114 669 erase-redraw;
 #X obj 155 372 m_speedlimit 150;
 #X obj 97 574 pack 0 63 0 10;
@@ -78,12 +78,14 @@
 #X obj 857 615 +;
 #X obj 769 583 t f f;
 #X obj 769 477 t b b b b;
-#X obj 155 420 t b b b b;
+#X obj 361 370 t b b b b, f 53;
 #X obj 155 346 b;
 #X obj 428 753 spigot 0;
-#X obj 467 682 loadbang;
-#X obj 467 704 del 1000;
-#X msg 467 726 1;
+#X obj 473 671 loadbang;
+#X obj 473 693 del 1000;
+#X msg 473 715 1;
+#X obj 428 774 t b a;
+#X obj 428 825 s \$2-reprint-text;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 49 0;
@@ -161,7 +163,9 @@
 #X connect 79 2 68 0;
 #X connect 79 3 69 0;
 #X connect 80 0 23 0;
-#X connect 81 0 21 0;
+#X connect 81 0 85 0;
 #X connect 82 0 83 0;
 #X connect 83 0 84 0;
 #X connect 84 0 81 1;
+#X connect 85 0 86 0;
+#X connect 85 1 21 0;

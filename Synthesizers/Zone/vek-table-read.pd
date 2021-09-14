@@ -8,7 +8,7 @@
 #X obj 181 78 \$3;
 #X text 388 73 arg3: init # wave to load;
 #X text 389 53 arg2: table number;
-#X obj 356 178 table vek-\$1-wav\$2 1027;
+#X obj 356 178 array define vek-\$1-wav\$2;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;

@@ -11,6 +11,8 @@
 #X obj 506 99 t b;
 #X obj 334 124 r cgSc-\$1-mute-print;
 #X obj 258 167 del 1;
+#X text 46 51 Arg1: match shorcut number;
+#X text 36 80 Arg2: which page;
 #X connect 0 0 4 1;
 #X connect 1 0 11 0;
 #X connect 1 1 2 0;
