@@ -1,0 +1,15 @@
+#N canvas 4 50 450 300 10;
+#X obj 30 33 inlet~;
+#X obj 110 36 inlet~;
+#X obj 30 84 rzero_rev~, f 14;
+#X obj 30 105 rpole~;
+#X obj 30 134 outlet~;
+#X obj 233 33 inlet;
+#X text 282 38 messages;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 1 0 3 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 2 0;
+#X connect 5 0 3 0;
