@@ -1,0 +1,30 @@
+#N canvas 271 151 696 508 10;
+#X text 98 160 FX13 module in;
+#X text 156 311 Print specific module in FX13 by sending label out
+, f 25;
+#X obj 38 156 spigot;
+#X msg 77 127 1;
+#X msg 116 107 0;
+#X text 209 7 arg1: instance number;
+#X text 209 27 arg2: knob number;
+#X text 209 47 arg3: module shortcut name;
+#X obj 38 178 b;
+#X text 243 110 *** a map-knob-fx that passes an 'x' for a knob of
+no use, f 24;
+#X msg 38 200 x;
+#X obj 77 85 sel \$3;
+#X obj 47 107 t b b;
+#X obj 38 341 s ms-\$1-knob\$2-label;
+#X obj 38 34 r ms-\$1-knob\$2-local;
+#X obj 77 58 r ms-\$1-Fxs;
+#X connect 2 0 8 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 8 0 10 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 11 1 4 0;
+#X connect 12 0 8 0;
+#X connect 12 1 3 0;
+#X connect 14 0 2 0;
+#X connect 15 0 11 0;
