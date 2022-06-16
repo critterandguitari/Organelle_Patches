@@ -62,7 +62,7 @@
 -1 -1;
 #X obj 205 445 tabread \$5;
 #X obj 591 463 tabread \$5;
-#X floatatom 719 283 5 0 0 0 - - -, f 5;
+#X floatatom 719 283 5 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 6 0;
