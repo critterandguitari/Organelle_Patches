@@ -1,0 +1,5 @@
+#N canvas 854 631 450 300 12;
+#X obj 35 11 inlet;
+#X text 87 16 list: value \, distance;
+#X obj 51 148 v \$0-current;
+#X text 167 96 direction;

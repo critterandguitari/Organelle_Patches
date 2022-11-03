@@ -1,0 +1,13 @@
+#N canvas 806 450 450 283 10;
+#X obj 235 48 inlet~;
+#X obj 129 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 203 105 snapshot~;
+#X floatatom 104 121 10 0 0 0 - - -;
+#X obj 203 84 metro \$1;
+#X text 286 34 Arg1: rate of metro \, ms;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X coords 0 -1 1 1 85 40 2 100 100;

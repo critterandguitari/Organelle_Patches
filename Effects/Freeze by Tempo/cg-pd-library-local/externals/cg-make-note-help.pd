@@ -1,0 +1,48 @@
+#N canvas 547 213 944 638 10;
+#X obj 31 197 r notes;
+#X text 24 10 Help for cg-make-note;
+#X text 88 47 cg-make-note is a voice abstraction to use with poly
+and clone \, or if you desire mono behavior on its own.;
+#X obj 31 230 poly 8 1, f 10;
+#X obj 31 261 pack 0 0 0;
+#X text 225 370 Arg 1 + 2: -s flag and then 1 tells clone to number
+the voices starting with 1 instead on 0 (1 - # of voices) \, so this
+works with poly;
+#X text 227 354 clone Arguments:;
+#X text 230 414 Arg 3: name of abstraction \, cg-make-note;
+#X text 231 440 Arg 4: number of voices to match poly;
+#X text 39 401 outgoing notes;
+#X text 100 95 This addresses the behavior of pd's makenote \, where
+new notes that are the same dont cancel previous ones;
+#X text 23 167 poly example: any number can be used ***poly and clone
+voice numbers have to match.;
+#X text 604 174 Mono example;
+#X obj 31 418 print poly8;
+#X obj 649 202 r notes;
+#X obj 649 344 print mono;
+#X obj 369 254 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 366 274 / 127;
+#X obj 366 295 * 1000;
+#X text 365 231 Note Length;
+#X obj 366 316 s \$0-note-length;
+#X obj 202 320 r \$0-note-length;
+#X obj 772 264 r \$0-note-length;
+#X text 231 460 Arg 5: velocity of note if only sending note numbers
+not pairs;
+#X text 231 490 Arg 6: length of note;
+#X obj 31 352 clone -s 1 cg-make-note 8 500;
+#X obj 649 293 cg-make-note 100 5000;
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 3 2 4 2;
+#X connect 4 0 25 0;
+#X connect 14 0 26 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 20 0;
+#X connect 21 0 25 2;
+#X connect 22 0 26 2;
+#X connect 25 0 13 0;
+#X connect 26 0 15 0;

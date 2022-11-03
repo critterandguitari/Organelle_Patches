@@ -1,0 +1,18 @@
+#N canvas 555 634 836 410 12;
+#X obj 104 20 inlet;
+#X obj 416 238 array define \$1-\$2 515;
+#X obj 104 248 array size \$1-\$2;
+#X obj 104 55 route size write read, f 44;
+#X obj 240 95 \$1;
+#X msg 240 126 read waves/\$1-wave.txt;
+#X obj 152 143 \$1;
+#X msg 152 174 write waves/\$1-wave.txt;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 1 6 0;
+#X connect 3 2 4 0;
+#X connect 3 3 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;

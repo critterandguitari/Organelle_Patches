@@ -1,0 +1,12 @@
+dist distort;
+chor chorus;
+comb comb;
+del delay;
+env envelope;
+frze freeze;
+pshft pitchshift;
+rvb reverb;
+rngm ringMod;
+sine sines;
+cst constant;
+bit bitcrush;

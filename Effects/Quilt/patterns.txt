@@ -1,0 +1,17 @@
+Up;
+Down;
+Up/Down;
+Up_2;
+Down_2;
+Up/Down_2;
+Up_3;
+Down_3;
+Up/Down_3;
+Up_4;
+Down_4;
+Up/Down_4;
+Outside_In;
+Outside_Bnce;
+Inside_Out;
+Inside_Bnce;
+Random;

@@ -1,0 +1,18 @@
+#N canvas 4 50 724 426 12;
+#X obj 20 8 inlet;
+#X text 62 8 page;
+#X obj 125 9 inlet;
+#X text 166 9 shortcut-aux mute;
+#X obj 125 122 == 0;
+#X obj 20 223 &&, f 20;
+#X obj 125 158 t b a;
+#X text 210 165 Arg 1: Page Number;
+#X obj 20 282 outlet;
+#X obj 20 108 == \$1;
+#X connect 0 0 9 0;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 9 0 5 0;
