@@ -56,7 +56,6 @@
 #X msg 306 326 \; p3s1 1: Samp Speed 0%;
 #X msg 269 361 \; p3s1 1: Samp Speed \$1%;
 #X msg 405 412 \; p3s1 1: Samp Speed \$1%;
-#X obj 406 208 * 4.48;
 #X obj 406 230 * 100;
 #X obj 269 245 * -1;
 #X obj 269 275 * 100;
@@ -65,6 +64,7 @@
 #X obj 57 362 f;
 #X obj 151 411 b;
 #X msg 151 439 \; p3s1 1: Speed Bpm Relative;
+#X obj 406 208 * 4.46;
 #X connect 1 0 3 0;
 #X connect 2 0 6 0;
 #X connect 3 0 2 1;
@@ -74,20 +74,20 @@
 #X connect 6 0 9 0;
 #X connect 7 0 11 0;
 #X connect 8 0 12 0;
-#X connect 9 0 17 0;
+#X connect 9 0 16 0;
 #X connect 9 1 10 0;
-#X connect 9 1 19 0;
-#X connect 9 2 13 0;
-#X connect 13 0 14 0;
-#X connect 13 0 19 0;
-#X connect 14 0 8 0;
-#X connect 15 0 16 0;
-#X connect 15 0 19 0;
-#X connect 16 0 7 0;
-#X connect 17 0 15 0;
-#X connect 18 0 20 0;
-#X connect 19 0 0 0;
-#X connect 20 0 21 0;
+#X connect 9 1 18 0;
+#X connect 9 2 21 0;
+#X connect 13 0 8 0;
+#X connect 14 0 15 0;
+#X connect 14 0 18 0;
+#X connect 15 0 7 0;
+#X connect 16 0 14 0;
+#X connect 17 0 19 0;
+#X connect 18 0 0 0;
+#X connect 19 0 20 0;
+#X connect 21 0 13 0;
+#X connect 21 0 18 0;
 #X restore 271 756 pd samp-speed;
 #X obj 245 412 detent 0.05;
 #X text 111 690 Playback Modes;
@@ -211,8 +211,7 @@
 #X msg 601 156 1;
 #X obj 589 37 r tempo-off;
 #X obj 550 101 spigot;
-#X text 609 196 WHite Flash for begining of bar/whole notes, f 16
-;
+#X text 609 196 WHite Flash for begining of bar/whole notes, f 16;
 #X obj 486 408 spigot 1;
 #X obj 365 198 r fs;
 #X obj 550 79 r quarters;
@@ -466,9 +465,7 @@
 #X obj 243 83 delay 20;
 #X msg 243 109 0;
 #X text 318 98 disable outgoing midi;
-#X msg 25 197 \; screenLine1 1) Tempo + Beats \; screenLine2 2) Filters
-+ Reverb \; screenLine3 3) Modes + Keyboard \; screenLine4 <-- HOME
-\;;
+#X msg 25 197 \; screenLine1 1) Tempo + Beats \; screenLine2 2) Filters + Reverb \; screenLine3 3) Modes + Keyboard \; screenLine4 <-- HOME \;;
 #N canvas 654 306 601 185 crown-window 0;
 #X obj 25 116 table crown 22050;
 #X msg 25 66 \; crown read window.txt;
@@ -488,8 +485,7 @@
 #X obj 302 203 abs~;
 #X obj 417 95 catch~ samp_voice_out;
 #X obj 417 161 *~ 1;
-#X text 553 296 get the output from voices and feed it into rev3~ \,
-a fun reverb included with Pd;
+#X text 553 296 get the output from voices and feed it into rev3~ \, a fun reverb included with Pd;
 #X obj 324 383 *~;
 #X obj 474 340 *~ 1;
 #X obj 272 505 throw~ outL;

@@ -1,5 +1,5 @@
 #N canvas 275 163 990 559 10;
-#X floatatom 504 172 5 0 0 0 - - -, f 5;
+#X floatatom 504 172 5 0 0 0 - - - 0;
 #N canvas 18 64 450 300 getNumSounds 0;
 #X obj 121 100 folder_list;
 #X msg 120 58 symbol ./Sounds/*.wav;
@@ -22,15 +22,12 @@
 #X connect 7 0 2 1;
 #X restore 504 150 pd getNumSounds;
 #N canvas 22 50 1066 883 recorder-player 0;
-#X obj 263 478 tgl 50 0 empty empty empty 17 7 0 100 -262144 -1 -1
-0 1;
-#X floatatom 330 559 5 0 0 0 - - -, f 5;
+#X obj 263 478 tgl 50 0 empty empty empty 17 7 0 100 #fcfcfc #000000 #000000 0 1;
+#X floatatom 330 559 5 0 0 0 - - - 0;
 #X obj 464 586 player 0;
-#X floatatom 536 562 5 0 0 0 - - -, f 5;
-#X obj 466 486 tgl 50 0 empty empty empty 17 7 0 100 -262144 -1 -1
-0 1;
-#X obj 316 245 tgl 50 0 empty empty empty 17 7 0 100 -262144 -1 -1
-0 1;
+#X floatatom 536 562 5 0 0 0 - - - 0;
+#X obj 466 486 tgl 50 0 empty empty empty 17 7 0 100 #fcfcfc #000000 #000000 0 1;
+#X obj 316 245 tgl 50 0 empty empty empty 17 7 0 100 #fcfcfc #000000 #000000 0 1;
 #X obj 391 465 + 1, f 4;
 #X msg 270 438 1;
 #X obj 304 325 sel 1 0;
@@ -177,7 +174,7 @@
 #X obj 502 314 loadbang;
 #X obj 504 193 s numSoundsAtStartup;
 #X obj 504 222 r currentNumSounds;
-#X floatatom 504 251 5 0 0 0 - - -, f 5;
+#X floatatom 504 251 5 0 0 0 - - - 0;
 #X obj 406 291 sig~;
 #X obj 396 339 *~;
 #X obj 406 268 r knob1;
@@ -185,26 +182,22 @@
 #X obj 141 342 r~ inL;
 #X obj 154 395 *~;
 #N canvas 1037 117 594 672 timer 0;
-#X floatatom 257 486 5 0 0 0 - - -, f 5;
+#X floatatom 257 486 5 0 0 0 - - - 0;
 #X obj 182 465 % 60;
-#X floatatom 182 489 5 0 0 0 - - -, f 5;
+#X floatatom 182 489 5 0 0 0 - - - 0;
 #X obj 107 468 % 24;
-#X floatatom 107 495 5 0 0 0 - - -, f 5;
+#X floatatom 107 495 5 0 0 0 - - - 0;
 #X obj 101 550 pack 0 0 0;
 #X obj 174 403 t f f f;
 #X obj 211 358 i;
-#X obj 124 98 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 431 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 124 98 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 431 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 250 359 + 1;
-#X obj 285 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 285 77 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 124 69 r timerStart;
 #X obj 445 85 r timerStop;
 #X obj 290 40 r timerReset;
-#X obj 131 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 131 240 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 137 281 metro 1000;
 #X obj 256 454 % 60;
 #X obj 182 443 / 60;
@@ -246,12 +239,10 @@
 #X connect 24 0 6 0;
 #X restore 502 281 pd timer;
 #X obj 725 192 r knob1;
-#X obj 725 214 * 101;
 #X obj 725 236 i;
 #X obj 725 258 change -1;
 #X msg 726 286 \; screenLine1 1: Monitor \$1 %;
-#X msg 502 338 \; screenLine1 1: Monitor \; screenLine2 2: x \; screenLine3
-3: x \; screenLine4 4: x \;;
+#X msg 502 338 \; screenLine1 1: Monitor \; screenLine2 2: x \; screenLine3 3: x \; screenLine4 4: x \;;
 #X obj 126 98 r~ inL;
 #X obj 252 96 r~ inR;
 #X obj 90 299 catch~ playeroutL;
@@ -262,25 +253,26 @@
 #X obj 303 334 r~ inR;
 #X obj 252 291 catch~ playeroutR;
 #X obj 282 470 throw~ outR;
+#X obj 725 214 * 100;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
-#X connect 4 0 20 0;
+#X connect 4 0 19 0;
 #X connect 6 0 7 0;
 #X connect 8 0 11 0;
 #X connect 9 0 13 1;
-#X connect 9 0 27 1;
+#X connect 9 0 26 1;
 #X connect 10 0 8 0;
 #X connect 11 0 9 0;
 #X connect 11 0 9 1;
 #X connect 12 0 13 0;
-#X connect 13 0 26 0;
-#X connect 15 0 16 0;
+#X connect 13 0 25 0;
+#X connect 15 0 30 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
-#X connect 18 0 19 0;
+#X connect 20 0 23 0;
 #X connect 21 0 24 0;
 #X connect 22 0 25 0;
-#X connect 23 0 26 0;
-#X connect 27 0 30 0;
-#X connect 28 0 27 0;
-#X connect 29 0 30 0;
+#X connect 26 0 29 0;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;
+#X connect 30 0 16 0;
