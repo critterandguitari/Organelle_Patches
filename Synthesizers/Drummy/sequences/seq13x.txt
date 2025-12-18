@@ -1,0 +1,7 @@
+0 length 421;
+0 note 82 100;
+3 note 83 100;
+9 note 83 0;
+14 note 83 100;
+122 note 83 0;
+342 note 82 0;
